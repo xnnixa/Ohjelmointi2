@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ConstantValues",
+            "request": "launch",
+            "mainClass": "com.example.ConstantValues",
+            "projectName": "homework1"
+        },
+        {
+            "type": "java",
             "name": "CheckDifference",
             "request": "launch",
             "mainClass": "com.example.CheckDifference",
