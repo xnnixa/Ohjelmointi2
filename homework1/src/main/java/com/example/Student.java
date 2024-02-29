@@ -74,8 +74,8 @@ public class Student {
 
     public void setMasterCredits(final double masterCredits) {
         if (masterCredits < ConstantValues.MAX_CREDITS && masterCredits > 0) {
-        this.masterCredits = masterCredits;
-        } 
+            this.masterCredits = masterCredits;
+        }
     }
 
     public String getTitleOfMastersThesis() {
@@ -107,7 +107,11 @@ public class Student {
     }
 
     public void setStartYear(final int startYear) {
-        this.startYear = startYear;
+        if (startYear < 0 || startYear > 2024) {
+            this.startYear = startYear;
+        } else {
+            this.startYear = 2024;
+        }
     }
 
     public int getGraduationYear() {
@@ -115,22 +119,33 @@ public class Student {
     }
 
     public String setGraduationYear(final int graduationYear) {
-        this.graduationYear = graduationYear;
+        if (canGraduate()) {
+            this.graduationYear = graduationYear;
+            return "Ok";
+        } else if (bachelorCredits < 180 || masterCredits < 120) {
+            return "Check the required studies";
+        } else {
+            return "Check graduation year";
+        }
     }
 
     public boolean hasGraduated() {
-        boolean isOk = true;
-        return isOk;
+        return canGraduate() && graduationYear != 0;
     }
 
-    public boolean canGraduate() {
-        boolean isOk = true;
-        return isOk;
+    private boolean canGraduate() {
+        return (bachelorCredits >= 180 && masterCredits >= 120)
+                && (graduationYear >= startYear && graduationYear <= 2024)
+                && (titleOfBachelorThesis != null && !titleOfBachelorThesis.isEmpty())
+                && (titleOfMastersThesis != null && !titleOfMastersThesis.isEmpty());
     }
 
     public int getStudyYears() {
-        int studyYears = 0;
-        return studyYears;
+        if (hasGraduated()) {
+            return graduationYear - startYear;
+        } else {
+            return -1;
+        }
     }
 
     private int getRandomId() {
@@ -139,17 +154,30 @@ public class Student {
         return id;
     }
 
+    @Override
     public String toString() {
+        StringBuilder str = new StringBuilder();
+        str.append("Student id: " +id + "\n");
+        str.append("FirstName: " +firstName + ", " );
         return null;
     }
 
     public String setPersonId(final String personID) {
+        checkPersonIDNumber(personID);
         return null;
     }
 
     private boolean checkPersonIDNumber(final String personID) {
+        if (personID.length() != 11) {
+            return false;
+        }
+        char centuryChar = personID.charAt(6);
 
-        return;
+        if (centuryChar != '+' && centuryChar != '-' && centuryChar != 'A') {
+            return false;
+        }
+
+        return true;
     }
 
     private boolean checkLeapYear(int year) {
@@ -157,7 +185,20 @@ public class Student {
     }
 
     private boolean checkValidCharacter(final String personID) {
-        return (Boolean) null;
+        char[] controlArray = {
+            '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+            'A', 'B', 'C', 'D', 'E', 'F', 'H', 'J', 'K', 'L',
+            'M', 'N', 'P', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y'
+    };
+        Character suppliedChar = personID.charAt(10);
+        String start = personID.substring(0, 6);
+        String end = personID.substring(7, 10);
+        Integer parsedId = Integer.parseInt(start + end);
+
+        Double controlDouble = ((double)parsedId / 31) % (parsedId / 31) * 31;
+        int controlLong = (int)Math.round(controlDouble);
+        Character c = controlArray[controlLong];
+        return suppliedChar.equals(c);
     }
 
     private boolean checkBirthDate(final String date) {
