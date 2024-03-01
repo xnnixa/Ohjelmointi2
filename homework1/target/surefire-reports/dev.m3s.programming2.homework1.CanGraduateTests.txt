@@ -1,0 +1,134 @@
+-------------------------------------------------------------------------------
+Test set: dev.m3s.programming2.homework1.CanGraduateTests
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 5, Skipped: 0, Time elapsed: 0.017 s <<< FAILURE! - in dev.m3s.programming2.homework1.CanGraduateTests
+dev.m3s.programming2.homework1.CanGraduateTests.missingCreditsTests  Time elapsed: 0.002 s  <<< ERROR!
+dev.m3s.maeaettae.jreq.RequirementException: 
+None of the classes in ⟨dev.m3s.programming2.homework1⟩ meet the requirements for ⟨Student⟩
+	a. The class should have name ⟨Student⟩	(0 matches)
+
+	Closest matches:
+	~> class ToStringTests
+	~> class SetterTests
+	~> class V2MethodTests extends H1
+	~> class ConstantValuesTests
+	~> class AttributeTests
+	~> class H1
+	~> private static class Expected <T>
+	~> class CanGraduateTests
+	~> class ConstructorTests
+	~> class NullTests
+	~> class GetterTests
+	~> class HasGraduatedTests
+	~> class MockStudent
+	~> class extends Iterator<String>
+	~> class SetGraduationYearTests
+	~> class OptionalTests
+	~> class RegexMatcher extends BaseMatcher<String>
+	~> class H1Matcher <T> extends BaseMatcher<T>
+	at dev.m3s.programming2.homework1.CanGraduateTests.setUp(CanGraduateTests.java:29)
+
+dev.m3s.programming2.homework1.CanGraduateTests.conditionsUnmetTest  Time elapsed: 0.002 s  <<< ERROR!
+dev.m3s.maeaettae.jreq.RequirementException: 
+None of the classes in ⟨dev.m3s.programming2.homework1⟩ meet the requirements for ⟨Student⟩
+	a. The class should have name ⟨Student⟩	(0 matches)
+
+	Closest matches:
+	~> class ToStringTests
+	~> private static class Expected <T>
+	~> class SetterTests
+	~> class ConstructorTests
+	~> class ConstantValuesTests
+	~> class GetterTests
+	~> class V2MethodTests extends H1
+	~> class AttributeTests
+	~> class OptionalTests
+	~> class MockStudent
+	~> class H1
+	~> class SetGraduationYearTests
+	~> class RegexMatcher extends BaseMatcher<String>
+	~> class extends Iterator<String>
+	~> class NullTests
+	~> class H1Matcher <T> extends BaseMatcher<T>
+	~> class CanGraduateTests
+	~> class HasGraduatedTests
+	at dev.m3s.programming2.homework1.CanGraduateTests.setUp(CanGraduateTests.java:29)
+
+dev.m3s.programming2.homework1.CanGraduateTests.missingTitleTests  Time elapsed: 0.002 s  <<< ERROR!
+dev.m3s.maeaettae.jreq.RequirementException: 
+None of the classes in ⟨dev.m3s.programming2.homework1⟩ meet the requirements for ⟨Student⟩
+	a. The class should have name ⟨Student⟩	(0 matches)
+
+	Closest matches:
+	~> class H1Matcher <T> extends BaseMatcher<T>
+	~> class extends Iterator<String>
+	~> class GetterTests
+	~> class OptionalTests
+	~> class RegexMatcher extends BaseMatcher<String>
+	~> class HasGraduatedTests
+	~> class MockStudent
+	~> class H1
+	~> class NullTests
+	~> class ConstructorTests
+	~> class CanGraduateTests
+	~> class SetterTests
+	~> class AttributeTests
+	~> class ToStringTests
+	~> class SetGraduationYearTests
+	~> class ConstantValuesTests
+	~> class V2MethodTests extends H1
+	~> private static class Expected <T>
+	at dev.m3s.programming2.homework1.CanGraduateTests.setUp(CanGraduateTests.java:29)
+
+dev.m3s.programming2.homework1.CanGraduateTests.EdgeValuesTest  Time elapsed: 0.002 s  <<< ERROR!
+dev.m3s.maeaettae.jreq.RequirementException: 
+None of the classes in ⟨dev.m3s.programming2.homework1⟩ meet the requirements for ⟨Student⟩
+	a. The class should have name ⟨Student⟩	(0 matches)
+
+	Closest matches:
+	~> class ToStringTests
+	~> class V2MethodTests extends H1
+	~> class OptionalTests
+	~> class GetterTests
+	~> class CanGraduateTests
+	~> class H1Matcher <T> extends BaseMatcher<T>
+	~> class HasGraduatedTests
+	~> class AttributeTests
+	~> class H1
+	~> class NullTests
+	~> class MockStudent
+	~> class SetterTests
+	~> class ConstructorTests
+	~> private static class Expected <T>
+	~> class SetGraduationYearTests
+	~> class extends Iterator<String>
+	~> class ConstantValuesTests
+	~> class RegexMatcher extends BaseMatcher<String>
+	at dev.m3s.programming2.homework1.CanGraduateTests.setUp(CanGraduateTests.java:29)
+
+dev.m3s.programming2.homework1.CanGraduateTests.conditionsMetTest  Time elapsed: 0.002 s  <<< ERROR!
+dev.m3s.maeaettae.jreq.RequirementException: 
+None of the classes in ⟨dev.m3s.programming2.homework1⟩ meet the requirements for ⟨Student⟩
+	a. The class should have name ⟨Student⟩	(0 matches)
+
+	Closest matches:
+	~> class SetGraduationYearTests
+	~> class MockStudent
+	~> class HasGraduatedTests
+	~> class ConstantValuesTests
+	~> class H1Matcher <T> extends BaseMatcher<T>
+	~> private static class Expected <T>
+	~> class OptionalTests
+	~> class RegexMatcher extends BaseMatcher<String>
+	~> class ConstructorTests
+	~> class extends Iterator<String>
+	~> class V2MethodTests extends H1
+	~> class GetterTests
+	~> class SetterTests
+	~> class NullTests
+	~> class ToStringTests
+	~> class AttributeTests
+	~> class H1
+	~> class CanGraduateTests
+	at dev.m3s.programming2.homework1.CanGraduateTests.setUp(CanGraduateTests.java:29)
+

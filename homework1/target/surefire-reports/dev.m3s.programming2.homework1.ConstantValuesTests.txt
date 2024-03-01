@@ -1,0 +1,30 @@
+-------------------------------------------------------------------------------
+Test set: dev.m3s.programming2.homework1.ConstantValuesTests
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 1, Skipped: 1, Time elapsed: 0.019 s <<< FAILURE! - in dev.m3s.programming2.homework1.ConstantValuesTests
+dev.m3s.programming2.homework1.ConstantValuesTests.constantValuesTests  Time elapsed: 0.011 s  <<< ERROR!
+dev.m3s.maeaettae.jreq.RequirementException: 
+None of the classes in ⟨dev.m3s.programming2.homework1⟩ meet the requirements for ⟨ConstantValues⟩
+	a. The class should have name ⟨ConstantValues⟩	(0 matches)
+
+	Closest matches:
+	~> class H1
+	~> class ConstantValuesTests
+	~> class GetterTests
+	~> class V2MethodTests extends H1
+	~> class RegexMatcher extends BaseMatcher<String>
+	~> class NullTests
+	~> class SetGraduationYearTests
+	~> class H1Matcher <T> extends BaseMatcher<T>
+	~> class OptionalTests
+	~> class ToStringTests
+	~> class SetterTests
+	~> class ConstructorTests
+	~> class CanGraduateTests
+	~> class AttributeTests
+	~> class HasGraduatedTests
+	~> class MockStudent
+	~> class extends Iterator<String>
+	~> private static class Expected <T>
+	at dev.m3s.programming2.homework1.ConstantValuesTests.constantValuesTests(ConstantValuesTests.java:32)
+

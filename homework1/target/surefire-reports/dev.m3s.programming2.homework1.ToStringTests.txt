@@ -1,0 +1,56 @@
+-------------------------------------------------------------------------------
+Test set: dev.m3s.programming2.homework1.ToStringTests
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 2, Skipped: 1, Time elapsed: 0.021 s <<< FAILURE! - in dev.m3s.programming2.homework1.ToStringTests
+dev.m3s.programming2.homework1.ToStringTests.toStringTest1  Time elapsed: 0.003 s  <<< ERROR!
+dev.m3s.maeaettae.jreq.RequirementException: 
+None of the classes in ⟨dev.m3s.programming2.homework1⟩ meet the requirements for ⟨Student⟩
+	a. The class should have name ⟨Student⟩	(0 matches)
+
+	Closest matches:
+	~> class RegexMatcher extends BaseMatcher<String>
+	~> class NullTests
+	~> class H1
+	~> class OptionalTests
+	~> class extends Iterator<String>
+	~> class GetterTests
+	~> class H1Matcher <T> extends BaseMatcher<T>
+	~> class MockStudent
+	~> private static class Expected <T>
+	~> class V2MethodTests extends H1
+	~> class ToStringTests
+	~> class ConstantValuesTests
+	~> class ConstructorTests
+	~> class SetGraduationYearTests
+	~> class HasGraduatedTests
+	~> class SetterTests
+	~> class AttributeTests
+	~> class CanGraduateTests
+	at dev.m3s.programming2.homework1.ToStringTests.toStringTest1(ToStringTests.java:20)
+
+dev.m3s.programming2.homework1.ToStringTests.toStringTest2  Time elapsed: 0.005 s  <<< ERROR!
+dev.m3s.maeaettae.jreq.RequirementException: 
+None of the classes in ⟨dev.m3s.programming2.homework1⟩ meet the requirements for ⟨Student⟩
+	a. The class should have name ⟨Student⟩	(0 matches)
+
+	Closest matches:
+	~> class V2MethodTests extends H1
+	~> class NullTests
+	~> class GetterTests
+	~> class extends Iterator<String>
+	~> class ConstantValuesTests
+	~> class RegexMatcher extends BaseMatcher<String>
+	~> class H1
+	~> class SetterTests
+	~> class H1Matcher <T> extends BaseMatcher<T>
+	~> class ConstructorTests
+	~> class HasGraduatedTests
+	~> class AttributeTests
+	~> class MockStudent
+	~> class SetGraduationYearTests
+	~> class OptionalTests
+	~> private static class Expected <T>
+	~> class ToStringTests
+	~> class CanGraduateTests
+	at dev.m3s.programming2.homework1.ToStringTests.toStringTest2(ToStringTests.java:45)
+
