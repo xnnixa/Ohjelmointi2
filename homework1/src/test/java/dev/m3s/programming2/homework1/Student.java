@@ -2,9 +2,9 @@ package dev.m3s.programming2.homework1;
 
 import java.time.Year;
 
-public class Student {
+public class Student { //LUOKKA
 
-    private String firstName = ConstantValues.NO_NAME;
+    private String firstName = ConstantValues.NO_NAME;  // attribuutit eli jäsenmuuttujat
     private String lastName = ConstantValues.NO_NAME;
     private int id;
     private double bachelorCredits;
@@ -159,25 +159,29 @@ public class Student {
         String graduationStatus = hasGraduated() ? "graduated in " + graduationYear : "not graduated, yet";
         str.append("Status: " + "The student has " + graduationStatus + "\n");
         str.append("StartYear: " + startYear + " (studies have lasted for " + getStudyYears() + " years)" + "\n");
-        str.append("BachelorCredits: " + bachelorCredits + (180 - bachelorCredits) + "(120.0/180.0)" + "\n");
+        str.append("BachelorCredits: " + bachelorCredits + " ==> " + (masterCredits >= ConstantValues.BACHELOR_CREDITS ? "All required bachelor credits completed " : " Missing bachelor credits " +( ConstantValues.BACHELOR_CREDITS - bachelorCredits)) + " (" + bachelorCredits +"/180.0)" + "\n");
         str.append("TitleOfBachelorThesis: " + titleOfBachelorThesis + "\n");
-        str.append("MasterCredits: " + masterCredits + "(180.0/120.0)" + "\n");
+        str.append("MasterCredits: " + masterCredits + " ==> " + (masterCredits >= ConstantValues.MASTER_CREDITS ? "All required master's credits completed " : " Missing master's credits " +( ConstantValues.MASTER_CREDITS - masterCredits)) + " (" + masterCredits +"/120.0)" + "\n");
         str.append("TitleOfMastersThesis: " + titleOfMastersThesis + "\n");
 
         return str.toString();
     }
 
     public String setPersonId(final String personID) {
+        if (personID != null) {
+            return ConstantValues.INVALID_BIRTHDAY;
+        }
+
         if (checkPersonIDNumber(personID)) {
             String birthDate = formatPersonIdToBirthDate(personID);
             if (checkBirthDate(birthDate)) {
                 if (checkValidCharacter(personID)) {
                     return "Ok";
                 } else {
-                    return "Incorrect check mark!";
+                    return ConstantValues.INCORRECT_CHECKMARK;
                 }
             } else {
-                return "Invalid birthday!";
+                return ConstantValues.INVALID_BIRTHDAY;
             }
         } else {
             return "Invalid person ID format!";
