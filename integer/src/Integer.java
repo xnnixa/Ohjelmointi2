@@ -12,18 +12,18 @@ public class Integer {
         }
 
         public IntegerValue add(IntegerValue other) {
-
+            int result = num + other.getInt();
+            return new IntegerValue(result);
         }
-
     }
 
     static class IntegerPoint {
         private IntegerValue x;
         private IntegerValue y;
 
-        public IntegerPoint(IntegerValue x, IntegerValue y) {
-            this.x = x;
-            this.y = y;
+        public IntegerPoint(IntegerValue ix, IntegerValue iy) {
+            this.x = ix;
+            this.y = iy;
         }
 
         public IntegerValue getX() {
@@ -34,8 +34,10 @@ public class Integer {
             return y;
         }
 
-        public IntegerPoint add(IntegerValue other) {
-            
+        public IntegerPoint add(IntegerPoint other) {
+            IntegerValue newX = this.x.add(other.getX());
+            IntegerValue newY = this.y.add(other.getY());
+            return new IntegerPoint(newX, newY);
         }
     }
 
