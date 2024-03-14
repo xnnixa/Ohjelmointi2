@@ -1,0 +1,34 @@
+-------------------------------------------------------------------------------
+Test set: dev.m3s.programming2.homework1.ConstructorTests
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 1, Errors: 1, Skipped: 1, Time elapsed: 0.036 s <<< FAILURE! - in dev.m3s.programming2.homework1.ConstructorTests
+dev.m3s.programming2.homework1.ConstructorTests.getRandomIdUsageTest  Time elapsed: 0.011 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: File src\main\java\dev\m3s\programming2\homework1\Student.java not found
+	at dev.m3s.programming2.homework1.ConstructorTests.getRandomIdUsageTest(ConstructorTests.java:104)
+
+dev.m3s.programming2.homework1.ConstructorTests.parameterizedConstructorTests  Time elapsed: 0.018 s  <<< ERROR!
+dev.m3s.maeaettae.jreq.RequirementException: 
+None of the classes in ⟨dev.m3s.programming2.homework1⟩ meet the requirements for ⟨Student⟩
+	a. The class should have name ⟨Student⟩	(0 matches)
+
+	Closest matches:
+	~> class GetterTests
+	~> class RegexMatcher extends BaseMatcher<String>
+	~> private static class Expected <T>
+	~> class ToStringTests
+	~> class MockStudent
+	~> class V2MethodTests extends H1
+	~> class OptionalTests
+	~> class H1Matcher <T> extends BaseMatcher<T>
+	~> class SetGraduationYearTests
+	~> class HasGraduatedTests
+	~> class ConstantValuesTests
+	~> class extends Iterator<String>
+	~> class H1
+	~> class SetterTests
+	~> class ConstructorTests
+	~> class AttributeTests
+	~> class NullTests
+	~> class CanGraduateTests
+	at dev.m3s.programming2.homework1.ConstructorTests.parameterizedConstructorTests(ConstructorTests.java:32)
+

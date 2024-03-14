@@ -1,5 +1,4 @@
-
-package com.example;
+package dev.m3s.programming2.homework1;
 
 public class Main {
     public static void main(String[] args) {
@@ -32,11 +31,18 @@ public class Main {
         student3.setStartYear(2018);
         student3.setGraduationYear(2022);
 
-        System.out.println("Details of Student 1:\n" + student1.toString());
-        System.out.println("Details of Student 2:\n" + student2.toString());
-        System.out.println("Details of Student 3:\n" + student3.toString());
+        try {
+            student1.setPersonId("This is a string");
+        } catch (Exception e) {
+            System.out.println("Error setting person ID for student1: " + e.getMessage());
+        }
 
-        
-
+        student2.setPersonId("320187-1234");
+ 
+        student3.setPersonId("121298-830A");
+ 
+        System.out.println(student1.toString());
+        System.out.println(student2.toString());
+        System.out.println(student3.toString());
     }
 }

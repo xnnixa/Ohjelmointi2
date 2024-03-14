@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="dev.m3s.programming2.homework1.SetGraduationYearTests" time="0.021" tests="6" errors="6" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="21"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\jenni\Ohjelmointi 2\homework1\target\test-classes;C:\Users\jenni\Ohjelmointi 2\homework1\target\classes;C:\Users\jenni\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.7.0\junit-jupiter-api-5.7.0.jar;C:\Users\jenni\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\jenni\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\jenni\.m2\repository\org\junit\platform\junit-platform-commons\1.7.0\junit-platform-commons-1.7.0.jar;C:\Users\jenni\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.7.0\junit-jupiter-engine-5.7.0.jar;C:\Users\jenni\.m2\repository\org\junit\platform\junit-platform-engine\1.7.0\junit-platform-engine-1.7.0.jar;C:\Users\jenni\.m2\repository\dev\m3s\maeaettae\jreq\0.4.6\jreq-0.4.6.jar;C:\Users\jenni\.m2\repository\io\github\staffan325\automated_grading\0.1.2\automated_grading-0.1.2.jar;C:\Users\jenni\.m2\repository\org\junit\platform\junit-platform-launcher\1.6.3\junit-platform-launcher-1.6.3.jar;C:\Users\jenni\.m2\repository\org\slf4j\slf4j-api\1.7.36\slf4j-api-1.7.36.jar;C:\Users\jenni\.m2\repository\org\hamcrest\hamcrest-all\1.3\hamcrest-all-1.3.jar;C:\Users\jenni\.m2\repository\org\hamcrest\java-hamcrest\2.0.0.0\java-hamcrest-2.0.0.0.jar;C:\Users\jenni\.m2\repository\com\puppycrawl\tools\checkstyle\10.12.3\checkstyle-10.12.3.jar;C:\Users\jenni\.m2\repository\info\picocli\picocli\4.7.4\picocli-4.7.4.jar;C:\Users\jenni\.m2\repository\org\antlr\antlr4-runtime\4.11.1\antlr4-runtime-4.11.1.jar;C:\Users\jenni\.m2\repository\commons-beanutils\commons-beanutils\1.9.4\commons-beanutils-1.9.4.jar;C:\Users\jenni\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\jenni\.m2\repository\commons-collections\commons-collections\3.2.2\commons-collections-3.2.2.jar;C:\Users\jenni\.m2\repository\com\google\guava\guava\32.0.1-jre\guava-32.0.1-jre.jar;C:\Users\jenni\.m2\repository\com\google\guava\failureaccess\1.0.1\failureaccess-1.0.1.jar;C:\Users\jenni\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\jenni\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\jenni\.m2\repository\com\google\errorprone\error_prone_annotations\2.18.0\error_prone_annotations-2.18.0.jar;C:\Users\jenni\.m2\repository\com\google\j2objc\j2objc-annotations\2.8\j2objc-annotations-2.8.jar;C:\Users\jenni\.m2\repository\org\reflections\reflections\0.10.2\reflections-0.10.2.jar;C:\Users\jenni\.m2\repository\org\javassist\javassist\3.28.0-GA\javassist-3.28.0-GA.jar;C:\Users\jenni\.m2\repository\net\sf\saxon\Saxon-HE\12.3\Saxon-HE-12.3.jar;C:\Users\jenni\.m2\repository\org\xmlresolver\xmlresolver\5.2.0\xmlresolver-5.2.0.jar;C:\Users\jenni\.m2\repository\org\apache\httpcomponents\client5\httpclient5\5.1.3\httpclient5-5.1.3.jar;C:\Users\jenni\.m2\repository\org\apache\httpcomponents\core5\httpcore5-h2\5.1.3\httpcore5-h2-5.1.3.jar;C:\Users\jenni\.m2\repository\commons-codec\commons-codec\1.15\commons-codec-1.15.jar;C:\Users\jenni\.m2\repository\org\apache\httpcomponents\core5\httpcore5\5.1.3\httpcore5-5.1.3.jar;C:\Users\jenni\.m2\repository\org\xmlresolver\xmlresolver\5.2.0\xmlresolver-5.2.0-data.jar;C:\Users\jenni\.m2\repository\org\checkerframework\checker-qual\3.27.0\checker-qual-3.27.0.jar;C:\Users\jenni\.m2\repository\org\apache\maven\doxia\doxia-core\1.12.0\doxia-core-1.12.0.jar;C:\Users\jenni\.m2\repository\org\apache\maven\doxia\doxia-sink-api\1.12.0\doxia-sink-api-1.12.0.jar;C:\Users\jenni\.m2\repository\org\apache\maven\doxia\doxia-logging-api\1.12.0\doxia-logging-api-1.12.0.jar;C:\Users\jenni\.m2\repository\org\codehaus\plexus\plexus-utils\3.3.0\plexus-utils-3.3.0.jar;C:\Users\jenni\.m2\repository\org\codehaus\plexus\plexus-container-default\2.1.0\plexus-container-default-2.1.0.jar;C:\Users\jenni\.m2\repository\org\codehaus\plexus\plexus-classworlds\2.6.0\plexus-classworlds-2.6.0.jar;C:\Users\jenni\.m2\repository\org\apache\xbean\xbean-reflect\3.7\xbean-reflect-3.7.jar;C:\Users\jenni\.m2\repository\com\google\collections\google-collections\1.0\google-collections-1.0.jar;C:\Users\jenni\.m2\repository\org\codehaus\plexus\plexus-component-annotations\2.1.0\plexus-component-annotations-2.1.0.jar;C:\Users\jenni\.m2\repository\org\apache\commons\commons-lang3\3.8.1\commons-lang3-3.8.1.jar;C:\Users\jenni\.m2\repository\org\apache\commons\commons-text\1.3\commons-text-1.3.jar;C:\Users\jenni\.m2\repository\org\apache\httpcomponents\httpclient\4.5.13\httpclient-4.5.13.jar;C:\Users\jenni\.m2\repository\org\apache\httpcomponents\httpcore\4.4.14\httpcore-4.4.14.jar;C:\Users\jenni\.m2\repository\org\apache\maven\doxia\doxia-module-xdoc\1.12.0\doxia-module-xdoc-1.12.0.jar;C:\Users\jenni\.m2\repository\dev\m3s\programming2.checkstyle\0.0.1\programming2.checkstyle-0.0.1.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="Europe/Helsinki"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="21"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="FI"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21.0.2\bin"/>
+    <property name="sun.java.command" value="C:\Users\jenni\AppData\Local\Temp\surefire13041646259317428929\surefirebooter5481551585396954184.jar C:\Users\jenni\AppData\Local\Temp\surefire13041646259317428929 2024-03-01T12-05-13_837-jvmRun1 surefire2240655958456265750tmp surefire_010896579685468109598tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\jenni\Ohjelmointi 2\homework1\target\test-classes;C:\Users\jenni\Ohjelmointi 2\homework1\target\classes;C:\Users\jenni\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.7.0\junit-jupiter-api-5.7.0.jar;C:\Users\jenni\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\jenni\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\jenni\.m2\repository\org\junit\platform\junit-platform-commons\1.7.0\junit-platform-commons-1.7.0.jar;C:\Users\jenni\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.7.0\junit-jupiter-engine-5.7.0.jar;C:\Users\jenni\.m2\repository\org\junit\platform\junit-platform-engine\1.7.0\junit-platform-engine-1.7.0.jar;C:\Users\jenni\.m2\repository\dev\m3s\maeaettae\jreq\0.4.6\jreq-0.4.6.jar;C:\Users\jenni\.m2\repository\io\github\staffan325\automated_grading\0.1.2\automated_grading-0.1.2.jar;C:\Users\jenni\.m2\repository\org\junit\platform\junit-platform-launcher\1.6.3\junit-platform-launcher-1.6.3.jar;C:\Users\jenni\.m2\repository\org\slf4j\slf4j-api\1.7.36\slf4j-api-1.7.36.jar;C:\Users\jenni\.m2\repository\org\hamcrest\hamcrest-all\1.3\hamcrest-all-1.3.jar;C:\Users\jenni\.m2\repository\org\hamcrest\java-hamcrest\2.0.0.0\java-hamcrest-2.0.0.0.jar;C:\Users\jenni\.m2\repository\com\puppycrawl\tools\checkstyle\10.12.3\checkstyle-10.12.3.jar;C:\Users\jenni\.m2\repository\info\picocli\picocli\4.7.4\picocli-4.7.4.jar;C:\Users\jenni\.m2\repository\org\antlr\antlr4-runtime\4.11.1\antlr4-runtime-4.11.1.jar;C:\Users\jenni\.m2\repository\commons-beanutils\commons-beanutils\1.9.4\commons-beanutils-1.9.4.jar;C:\Users\jenni\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\jenni\.m2\repository\commons-collections\commons-collections\3.2.2\commons-collections-3.2.2.jar;C:\Users\jenni\.m2\repository\com\google\guava\guava\32.0.1-jre\guava-32.0.1-jre.jar;C:\Users\jenni\.m2\repository\com\google\guava\failureaccess\1.0.1\failureaccess-1.0.1.jar;C:\Users\jenni\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\jenni\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\jenni\.m2\repository\com\google\errorprone\error_prone_annotations\2.18.0\error_prone_annotations-2.18.0.jar;C:\Users\jenni\.m2\repository\com\google\j2objc\j2objc-annotations\2.8\j2objc-annotations-2.8.jar;C:\Users\jenni\.m2\repository\org\reflections\reflections\0.10.2\reflections-0.10.2.jar;C:\Users\jenni\.m2\repository\org\javassist\javassist\3.28.0-GA\javassist-3.28.0-GA.jar;C:\Users\jenni\.m2\repository\net\sf\saxon\Saxon-HE\12.3\Saxon-HE-12.3.jar;C:\Users\jenni\.m2\repository\org\xmlresolver\xmlresolver\5.2.0\xmlresolver-5.2.0.jar;C:\Users\jenni\.m2\repository\org\apache\httpcomponents\client5\httpclient5\5.1.3\httpclient5-5.1.3.jar;C:\Users\jenni\.m2\repository\org\apache\httpcomponents\core5\httpcore5-h2\5.1.3\httpcore5-h2-5.1.3.jar;C:\Users\jenni\.m2\repository\commons-codec\commons-codec\1.15\commons-codec-1.15.jar;C:\Users\jenni\.m2\repository\org\apache\httpcomponents\core5\httpcore5\5.1.3\httpcore5-5.1.3.jar;C:\Users\jenni\.m2\repository\org\xmlresolver\xmlresolver\5.2.0\xmlresolver-5.2.0-data.jar;C:\Users\jenni\.m2\repository\org\checkerframework\checker-qual\3.27.0\checker-qual-3.27.0.jar;C:\Users\jenni\.m2\repository\org\apache\maven\doxia\doxia-core\1.12.0\doxia-core-1.12.0.jar;C:\Users\jenni\.m2\repository\org\apache\maven\doxia\doxia-sink-api\1.12.0\doxia-sink-api-1.12.0.jar;C:\Users\jenni\.m2\repository\org\apache\maven\doxia\doxia-logging-api\1.12.0\doxia-logging-api-1.12.0.jar;C:\Users\jenni\.m2\repository\org\codehaus\plexus\plexus-utils\3.3.0\plexus-utils-3.3.0.jar;C:\Users\jenni\.m2\repository\org\codehaus\plexus\plexus-container-default\2.1.0\plexus-container-default-2.1.0.jar;C:\Users\jenni\.m2\repository\org\codehaus\plexus\plexus-classworlds\2.6.0\plexus-classworlds-2.6.0.jar;C:\Users\jenni\.m2\repository\org\apache\xbean\xbean-reflect\3.7\xbean-reflect-3.7.jar;C:\Users\jenni\.m2\repository\com\google\collections\google-collections\1.0\google-collections-1.0.jar;C:\Users\jenni\.m2\repository\org\codehaus\plexus\plexus-component-annotations\2.1.0\plexus-component-annotations-2.1.0.jar;C:\Users\jenni\.m2\repository\org\apache\commons\commons-lang3\3.8.1\commons-lang3-3.8.1.jar;C:\Users\jenni\.m2\repository\org\apache\commons\commons-text\1.3\commons-text-1.3.jar;C:\Users\jenni\.m2\repository\org\apache\httpcomponents\httpclient\4.5.13\httpclient-4.5.13.jar;C:\Users\jenni\.m2\repository\org\apache\httpcomponents\httpcore\4.4.14\httpcore-4.4.14.jar;C:\Users\jenni\.m2\repository\org\apache\maven\doxia\doxia-module-xdoc\1.12.0\doxia-module-xdoc-1.12.0.jar;C:\Users\jenni\.m2\repository\dev\m3s\programming2.checkstyle\0.0.1\programming2.checkstyle-0.0.1.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\jenni"/>
+    <property name="user.language" value="fi"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2024-01-16"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-21.0.2"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\jenni\Ohjelmointi 2\homework1"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\jenni\AppData\Local\Temp\surefire13041646259317428929\surefirebooter5481551585396954184.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="21.0.2+13-LTS-58"/>
+    <property name="user.name" value="jenni"/>
+    <property name="stdout.encoding" value="Cp1252"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\jenni\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\jenni\AppData\Local\Temp\"/>
+    <property name="java.version" value="21.0.2"/>
+    <property name="user.dir" value="C:\Users\jenni\Ohjelmointi 2\homework1"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-21.0.2\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\MinGW\bin;C:\Program Files\SysinternalsSuite;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk-21.0.2\bin;C:\Program Files\Maven\apache-maven-3.9.6\bin;C:\Users\jenni\AppData\Local\Microsoft\WindowsApps;C:\Users\jenni\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\jenni\AppData\Local\GitHubDesktop\bin;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="Cp1252"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="21.0.2+13-LTS-58"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="65.0"/>
+  </properties>
+  <testcase name="validYearTests" classname="dev.m3s.programming2.homework1.SetGraduationYearTests" time="0.002">
+    <error type="dev.m3s.maeaettae.jreq.RequirementException"><![CDATA[dev.m3s.maeaettae.jreq.RequirementException: 
+None of the classes in ⟨dev.m3s.programming2.homework1⟩ meet the requirements for ⟨Student⟩
+	a. The class should have name ⟨Student⟩	(0 matches)
+
+	Closest matches:
+	~> class ConstantValuesTests
+	~> class H1
+	~> class ConstructorTests
+	~> class NullTests
+	~> class MockStudent
+	~> class OptionalTests
+	~> class H1Matcher <T> extends BaseMatcher<T>
+	~> class V2MethodTests extends H1
+	~> class AttributeTests
+	~> class HasGraduatedTests
+	~> private static class Expected <T>
+	~> class ToStringTests
+	~> class GetterTests
+	~> class SetterTests
+	~> class RegexMatcher extends BaseMatcher<String>
+	~> class extends Iterator<String>
+	~> class SetGraduationYearTests
+	~> class CanGraduateTests
+	at dev.m3s.programming2.homework1.SetGraduationYearTests.setUp(SetGraduationYearTests.java:36)
+]]></error>
+  </testcase>
+  <testcase name="missingCreditsTests" classname="dev.m3s.programming2.homework1.SetGraduationYearTests" time="0.002">
+    <error type="dev.m3s.maeaettae.jreq.RequirementException"><![CDATA[dev.m3s.maeaettae.jreq.RequirementException: 
+None of the classes in ⟨dev.m3s.programming2.homework1⟩ meet the requirements for ⟨Student⟩
+	a. The class should have name ⟨Student⟩	(0 matches)
+
+	Closest matches:
+	~> class ToStringTests
+	~> class RegexMatcher extends BaseMatcher<String>
+	~> class GetterTests
+	~> class SetterTests
+	~> class SetGraduationYearTests
+	~> class CanGraduateTests
+	~> class AttributeTests
+	~> class HasGraduatedTests
+	~> class NullTests
+	~> class extends Iterator<String>
+	~> class V2MethodTests extends H1
+	~> class H1
+	~> class ConstructorTests
+	~> class OptionalTests
+	~> class H1Matcher <T> extends BaseMatcher<T>
+	~> class MockStudent
+	~> class ConstantValuesTests
+	~> private static class Expected <T>
+	at dev.m3s.programming2.homework1.SetGraduationYearTests.setUp(SetGraduationYearTests.java:36)
+]]></error>
+  </testcase>
+  <testcase name="missingThesisTitleTests" classname="dev.m3s.programming2.homework1.SetGraduationYearTests" time="0.002">
+    <error type="dev.m3s.maeaettae.jreq.RequirementException"><![CDATA[dev.m3s.maeaettae.jreq.RequirementException: 
+None of the classes in ⟨dev.m3s.programming2.homework1⟩ meet the requirements for ⟨Student⟩
+	a. The class should have name ⟨Student⟩	(0 matches)
+
+	Closest matches:
+	~> class GetterTests
+	~> private static class Expected <T>
+	~> class AttributeTests
+	~> class SetGraduationYearTests
+	~> class OptionalTests
+	~> class HasGraduatedTests
+	~> class ConstantValuesTests
+	~> class CanGraduateTests
+	~> class SetterTests
+	~> class extends Iterator<String>
+	~> class NullTests
+	~> class MockStudent
+	~> class ToStringTests
+	~> class RegexMatcher extends BaseMatcher<String>
+	~> class V2MethodTests extends H1
+	~> class H1Matcher <T> extends BaseMatcher<T>
+	~> class H1
+	~> class ConstructorTests
+	at dev.m3s.programming2.homework1.SetGraduationYearTests.setUp(SetGraduationYearTests.java:36)
+]]></error>
+  </testcase>
+  <testcase name="invalidYearTests" classname="dev.m3s.programming2.homework1.SetGraduationYearTests" time="0.002">
+    <error type="dev.m3s.maeaettae.jreq.RequirementException"><![CDATA[dev.m3s.maeaettae.jreq.RequirementException: 
+None of the classes in ⟨dev.m3s.programming2.homework1⟩ meet the requirements for ⟨Student⟩
+	a. The class should have name ⟨Student⟩	(0 matches)
+
+	Closest matches:
+	~> class SetterTests
+	~> class ConstructorTests
+	~> class RegexMatcher extends BaseMatcher<String>
+	~> class AttributeTests
+	~> class OptionalTests
+	~> class ToStringTests
+	~> class V2MethodTests extends H1
+	~> class extends Iterator<String>
+	~> class NullTests
+	~> class MockStudent
+	~> class GetterTests
+	~> class HasGraduatedTests
+	~> class CanGraduateTests
+	~> private static class Expected <T>
+	~> class SetGraduationYearTests
+	~> class H1Matcher <T> extends BaseMatcher<T>
+	~> class ConstantValuesTests
+	~> class H1
+	at dev.m3s.programming2.homework1.SetGraduationYearTests.setUp(SetGraduationYearTests.java:36)
+]]></error>
+  </testcase>
+  <testcase name="conditionsUnmetTest" classname="dev.m3s.programming2.homework1.SetGraduationYearTests" time="0.002">
+    <error type="dev.m3s.maeaettae.jreq.RequirementException"><![CDATA[dev.m3s.maeaettae.jreq.RequirementException: 
+None of the classes in ⟨dev.m3s.programming2.homework1⟩ meet the requirements for ⟨Student⟩
+	a. The class should have name ⟨Student⟩	(0 matches)
+
+	Closest matches:
+	~> class ConstantValuesTests
+	~> class H1
+	~> class GetterTests
+	~> class AttributeTests
+	~> class RegexMatcher extends BaseMatcher<String>
+	~> class H1Matcher <T> extends BaseMatcher<T>
+	~> class SetterTests
+	~> class ToStringTests
+	~> class extends Iterator<String>
+	~> class MockStudent
+	~> private static class Expected <T>
+	~> class NullTests
+	~> class HasGraduatedTests
+	~> class V2MethodTests extends H1
+	~> class CanGraduateTests
+	~> class SetGraduationYearTests
+	~> class ConstructorTests
+	~> class OptionalTests
+	at dev.m3s.programming2.homework1.SetGraduationYearTests.setUp(SetGraduationYearTests.java:36)
+]]></error>
+  </testcase>
+  <testcase name="conditionsMetTest" classname="dev.m3s.programming2.homework1.SetGraduationYearTests" time="0.002">
+    <error type="dev.m3s.maeaettae.jreq.RequirementException"><![CDATA[dev.m3s.maeaettae.jreq.RequirementException: 
+None of the classes in ⟨dev.m3s.programming2.homework1⟩ meet the requirements for ⟨Student⟩
+	a. The class should have name ⟨Student⟩	(0 matches)
+
+	Closest matches:
+	~> class H1
+	~> class SetGraduationYearTests
+	~> class NullTests
+	~> class ToStringTests
+	~> class V2MethodTests extends H1
+	~> class OptionalTests
+	~> class CanGraduateTests
+	~> class H1Matcher <T> extends BaseMatcher<T>
+	~> class SetterTests
+	~> class ConstructorTests
+	~> private static class Expected <T>
+	~> class ConstantValuesTests
+	~> class extends Iterator<String>
+	~> class MockStudent
+	~> class AttributeTests
+	~> class HasGraduatedTests
+	~> class GetterTests
+	~> class RegexMatcher extends BaseMatcher<String>
+	at dev.m3s.programming2.homework1.SetGraduationYearTests.setUp(SetGraduationYearTests.java:36)
+]]></error>
+  </testcase>
+</testsuite>

@@ -1,19 +1,17 @@
+package dev.m3s.programming2.homework1;
 
+import java.time.Year;
 
-package com.example;
+public class Student { //LUOKKA
 
-import static org.junit.jupiter.api.DynamicTest.dynamicTest;
-
-public class Student {
-
-    private String firstName = ConstantValues.NO_NAME;
+    private String firstName = ConstantValues.NO_NAME;  // attribuutit eli jäsenmuuttujat
     private String lastName = ConstantValues.NO_NAME;
     private int id;
     private double bachelorCredits;
     private double masterCredits;
     private String titleOfMastersThesis = ConstantValues.NO_TITLE;
     private String titleOfBachelorThesis = ConstantValues.NO_TITLE;
-    private int startYear = 2024;
+    private int startYear = Year.now().getValue();
     private int graduationYear;
     private String birthDate = ConstantValues.NO_BIRTHDATE;
 
@@ -21,10 +19,10 @@ public class Student {
         id = getRandomId();
     }
 
-    public Student(String fname, String lname) {
-        id = getRandomId();
-        firstName = fname;
-        lastName = lname;
+    public Student(String lname, String fname) {
+        this.id = getRandomId();
+        firstName = (fname != null) ? fname : ConstantValues.NO_NAME;
+        lastName = (lname != null) ? lname : ConstantValues.NO_NAME;
     }
 
     public String getFirstName() {
@@ -34,11 +32,7 @@ public class Student {
     public void setFirstName(String firstName) {
         if (firstName != null) {
             this.firstName = firstName;
-        } /*
-           * else {
-           * this.firstName = ConstantValues.NO_NAME;
-           * }
-           */
+        }
     }
 
     public String getLastName() {
@@ -48,11 +42,7 @@ public class Student {
     public void setLastName(String lastName) {
         if (lastName != null) {
             this.lastName = lastName;
-        } /*
-           * else {
-           * this.lastName = ConstantValues.NO_NAME;
-           * }
-           */
+        }
     }
 
     public int getId() {
@@ -60,7 +50,7 @@ public class Student {
     }
 
     public void setId(final int id) {
-        if (id < ConstantValues.MAX_ID && id > ConstantValues.MIN_ID) {
+        if (id <= ConstantValues.MAX_ID && id >= ConstantValues.MIN_ID) {
             this.id = id;
         }
     }
@@ -70,7 +60,7 @@ public class Student {
     }
 
     public void setBachelorCredits(final double bachelorCredits) {
-        if (bachelorCredits < ConstantValues.MAX_CREDITS && bachelorCredits > 0) {
+        if (bachelorCredits <= ConstantValues.MAX_CREDITS && bachelorCredits >= 0) {
             this.bachelorCredits = bachelorCredits;
         }
     }
@@ -80,7 +70,7 @@ public class Student {
     }
 
     public void setMasterCredits(final double masterCredits) {
-        if (masterCredits < ConstantValues.MAX_CREDITS && masterCredits > 0) {
+        if (masterCredits <= ConstantValues.MAX_CREDITS && masterCredits >= 0) {
             this.masterCredits = masterCredits;
         }
     }
@@ -92,11 +82,7 @@ public class Student {
     public void setTitleOfMastersThesis(String title) {
         if (title != null) {
             this.titleOfMastersThesis = title;
-        } /*
-           * else {
-           * this.titleOfMastersThesis = ConstantValues.NO_TITLE;
-           * }
-           */
+        }
     }
 
     public String getTitleOfBachelorThesis() {
@@ -106,11 +92,7 @@ public class Student {
     public void setTitleOfBachelorThesis(String title) {
         if (title != null) {
             this.titleOfBachelorThesis = title;
-        } /*
-           * else {
-           * this.titleOfBachelorThesis = ConstantValues.NO_TITLE;
-           * }
-           */
+        }
     }
 
     public int getStartYear() {
@@ -120,11 +102,7 @@ public class Student {
     public void setStartYear(final int startYear) {
         if (startYear > 2000 && startYear <= 2024) {
             this.startYear = startYear;
-        } /*
-           * else {
-           * this.startYear = 2024;
-           * }
-           */
+        }
     }
 
     public int getGraduationYear() {
@@ -132,38 +110,43 @@ public class Student {
     }
 
     public String setGraduationYear(final int graduationYear) {
-        if (canGraduate()) {
+        if (!canGraduate()) {
+            return "Check the required studies";
+        }
+        if (graduationYear < startYear || graduationYear > Year.now().getValue()) {
+            return "Check graduation year";
+        } else {
             this.graduationYear = graduationYear;
             return "Ok";
-        } else if (bachelorCredits < 180 || masterCredits < 120) {
-            return "Check the required studies";
-        } else {
-            return "Check graduation year";
         }
     }
 
     public boolean hasGraduated() {
-        return canGraduate();
+        if (graduationYear != 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     private boolean canGraduate() {
         return (bachelorCredits >= 180 && masterCredits >= 120)
-                && (graduationYear >= startYear && graduationYear <= 2024)
-                && (titleOfBachelorThesis != null && !titleOfBachelorThesis.isEmpty())
-                && (titleOfMastersThesis != null && !titleOfMastersThesis.isEmpty());
+                && (bachelorCredits + masterCredits) >= 300
+                && (titleOfBachelorThesis != "No title")
+                && (titleOfMastersThesis != "No title");
     }
 
     public int getStudyYears() {
         if (hasGraduated()) {
             return graduationYear - startYear;
         } else {
-            return -1;
+            return Year.now().getValue() - startYear;
         }
     }
 
     private int getRandomId() {
-        double doubleId = (Math.random() * 100);
-        int id = (int) Math.round(doubleId);
+        double randomId = (Math.random() * 100) + 1;
+        int id = (int) randomId;
         return id;
     }
 
@@ -171,23 +154,44 @@ public class Student {
     public String toString() {
         StringBuilder str = new StringBuilder();
         str.append("Student id: " + id + "\n");
-        str.append("FirstName: " + firstName + ", ");
-        str.append("Date of birth: " + birthDate);
-        str.append("Status: " + hasGraduated());
-        str.append("StartYear: " + startYear + "(studies have lasted for " + getStudyYears() + " years)");
-        str.append("BachelorCredits: " + bachelorCredits + /*" ==> Missing bachelor credits " */ + (180 - bachelorCredits) + "(120.0/180.0)");
-        str.append("TitleOfBachelorThesis: " + titleOfBachelorThesis);
-        str.append("MasterCredits: " + masterCredits + /*" ==> Al required master's credits completed" */ "(180.0/120.0)");
-        str.append("TitleOfMastersThesis: " +titleOfMastersThesis);
-        return null;
+        str.append("FirstName: " + firstName + ", " + "LastName: " + lastName + "\n");
+        str.append("Date of birth: " + birthDate + "\n");
+        String graduationStatus = hasGraduated() ? "graduated in " + graduationYear : "not graduated, yet";
+        str.append("Status: " + "The student has " + graduationStatus + "\n");
+        str.append("StartYear: " + startYear + " (studies have lasted for " + getStudyYears() + " years)" + "\n");
+        str.append("BachelorCredits: " + bachelorCredits + " ==> " + (masterCredits >= ConstantValues.BACHELOR_CREDITS ? "All required bachelor credits completed " : " Missing bachelor credits " +( ConstantValues.BACHELOR_CREDITS - bachelorCredits)) + " (" + bachelorCredits +"/180.0)" + "\n");
+        str.append("TitleOfBachelorThesis: " + titleOfBachelorThesis + "\n");
+        str.append("MasterCredits: " + masterCredits + " ==> " + (masterCredits >= ConstantValues.MASTER_CREDITS ? "All required master's credits completed " : " Missing master's credits " +( ConstantValues.MASTER_CREDITS - masterCredits)) + " (" + masterCredits +"/120.0)" + "\n");
+        str.append("TitleOfMastersThesis: " + titleOfMastersThesis + "\n");
+
+        return str.toString();
     }
 
     public String setPersonId(final String personID) {
-        checkPersonIDNumber(personID);
-        return null;
+        if (personID != null) {
+            return ConstantValues.INVALID_BIRTHDAY;
+        }
+
+        if (checkPersonIDNumber(personID)) {
+            String birthDate = formatPersonIdToBirthDate(personID);
+            if (checkBirthDate(birthDate)) {
+                if (checkValidCharacter(personID)) {
+                    return "Ok";
+                } else {
+                    return ConstantValues.INCORRECT_CHECKMARK;
+                }
+            } else {
+                return ConstantValues.INVALID_BIRTHDAY;
+            }
+        } else {
+            return "Invalid person ID format!";
+        }
     }
 
     private boolean checkPersonIDNumber(final String personID) {
+        if (personID == null) {
+            return false;
+        }
         if (personID.length() != 11) {
             return false;
         }
@@ -197,7 +201,7 @@ public class Student {
             return false;
         }
 
-        return true;
+        return checkValidCharacter(personID) && checkBirthDate(personID);
     }
 
     private boolean checkLeapYear(int year) {
@@ -262,5 +266,9 @@ public class Student {
         }
 
         return day <= maxDaysInMonth;
+    }
+
+    private String formatPersonIdToBirthDate(String personId) {
+        return personId.substring(0, 6) + "." + personId.substring(7, 9) + "." + "19" + personId.substring(7, 9);
     }
 }

@@ -1,0 +1,56 @@
+-------------------------------------------------------------------------------
+Test set: dev.m3s.programming2.homework1.HasGraduatedTests
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.008 s <<< FAILURE! - in dev.m3s.programming2.homework1.HasGraduatedTests
+dev.m3s.programming2.homework1.HasGraduatedTests.hasNotGraduatedTest  Time elapsed: 0.003 s  <<< ERROR!
+dev.m3s.maeaettae.jreq.RequirementException: 
+None of the classes in ⟨dev.m3s.programming2.homework1⟩ meet the requirements for ⟨Student⟩
+	a. The class should have name ⟨Student⟩	(0 matches)
+
+	Closest matches:
+	~> class GetterTests
+	~> class H1Matcher <T> extends BaseMatcher<T>
+	~> class SetGraduationYearTests
+	~> class MockStudent
+	~> class AttributeTests
+	~> class extends Iterator<String>
+	~> class NullTests
+	~> class ConstructorTests
+	~> class HasGraduatedTests
+	~> class RegexMatcher extends BaseMatcher<String>
+	~> class CanGraduateTests
+	~> class ConstantValuesTests
+	~> class SetterTests
+	~> class H1
+	~> class OptionalTests
+	~> class ToStringTests
+	~> class V2MethodTests extends H1
+	~> private static class Expected <T>
+	at dev.m3s.programming2.homework1.HasGraduatedTests.setUp(HasGraduatedTests.java:21)
+
+dev.m3s.programming2.homework1.HasGraduatedTests.hasGraduatedTest  Time elapsed: 0.002 s  <<< ERROR!
+dev.m3s.maeaettae.jreq.RequirementException: 
+None of the classes in ⟨dev.m3s.programming2.homework1⟩ meet the requirements for ⟨Student⟩
+	a. The class should have name ⟨Student⟩	(0 matches)
+
+	Closest matches:
+	~> class V2MethodTests extends H1
+	~> class SetterTests
+	~> class AttributeTests
+	~> class ConstructorTests
+	~> private static class Expected <T>
+	~> class H1Matcher <T> extends BaseMatcher<T>
+	~> class CanGraduateTests
+	~> class GetterTests
+	~> class extends Iterator<String>
+	~> class NullTests
+	~> class H1
+	~> class RegexMatcher extends BaseMatcher<String>
+	~> class ToStringTests
+	~> class MockStudent
+	~> class HasGraduatedTests
+	~> class SetGraduationYearTests
+	~> class ConstantValuesTests
+	~> class OptionalTests
+	at dev.m3s.programming2.homework1.HasGraduatedTests.setUp(HasGraduatedTests.java:21)
+

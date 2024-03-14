@@ -1,0 +1,160 @@
+-------------------------------------------------------------------------------
+Test set: dev.m3s.programming2.homework1.SetGraduationYearTests
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 0, Errors: 6, Skipped: 0, Time elapsed: 0.021 s <<< FAILURE! - in dev.m3s.programming2.homework1.SetGraduationYearTests
+dev.m3s.programming2.homework1.SetGraduationYearTests.validYearTests  Time elapsed: 0.002 s  <<< ERROR!
+dev.m3s.maeaettae.jreq.RequirementException: 
+None of the classes in ⟨dev.m3s.programming2.homework1⟩ meet the requirements for ⟨Student⟩
+	a. The class should have name ⟨Student⟩	(0 matches)
+
+	Closest matches:
+	~> class ConstantValuesTests
+	~> class H1
+	~> class ConstructorTests
+	~> class NullTests
+	~> class MockStudent
+	~> class OptionalTests
+	~> class H1Matcher <T> extends BaseMatcher<T>
+	~> class V2MethodTests extends H1
+	~> class AttributeTests
+	~> class HasGraduatedTests
+	~> private static class Expected <T>
+	~> class ToStringTests
+	~> class GetterTests
+	~> class SetterTests
+	~> class RegexMatcher extends BaseMatcher<String>
+	~> class extends Iterator<String>
+	~> class SetGraduationYearTests
+	~> class CanGraduateTests
+	at dev.m3s.programming2.homework1.SetGraduationYearTests.setUp(SetGraduationYearTests.java:36)
+
+dev.m3s.programming2.homework1.SetGraduationYearTests.missingCreditsTests  Time elapsed: 0.002 s  <<< ERROR!
+dev.m3s.maeaettae.jreq.RequirementException: 
+None of the classes in ⟨dev.m3s.programming2.homework1⟩ meet the requirements for ⟨Student⟩
+	a. The class should have name ⟨Student⟩	(0 matches)
+
+	Closest matches:
+	~> class ToStringTests
+	~> class RegexMatcher extends BaseMatcher<String>
+	~> class GetterTests
+	~> class SetterTests
+	~> class SetGraduationYearTests
+	~> class CanGraduateTests
+	~> class AttributeTests
+	~> class HasGraduatedTests
+	~> class NullTests
+	~> class extends Iterator<String>
+	~> class V2MethodTests extends H1
+	~> class H1
+	~> class ConstructorTests
+	~> class OptionalTests
+	~> class H1Matcher <T> extends BaseMatcher<T>
+	~> class MockStudent
+	~> class ConstantValuesTests
+	~> private static class Expected <T>
+	at dev.m3s.programming2.homework1.SetGraduationYearTests.setUp(SetGraduationYearTests.java:36)
+
+dev.m3s.programming2.homework1.SetGraduationYearTests.missingThesisTitleTests  Time elapsed: 0.002 s  <<< ERROR!
+dev.m3s.maeaettae.jreq.RequirementException: 
+None of the classes in ⟨dev.m3s.programming2.homework1⟩ meet the requirements for ⟨Student⟩
+	a. The class should have name ⟨Student⟩	(0 matches)
+
+	Closest matches:
+	~> class GetterTests
+	~> private static class Expected <T>
+	~> class AttributeTests
+	~> class SetGraduationYearTests
+	~> class OptionalTests
+	~> class HasGraduatedTests
+	~> class ConstantValuesTests
+	~> class CanGraduateTests
+	~> class SetterTests
+	~> class extends Iterator<String>
+	~> class NullTests
+	~> class MockStudent
+	~> class ToStringTests
+	~> class RegexMatcher extends BaseMatcher<String>
+	~> class V2MethodTests extends H1
+	~> class H1Matcher <T> extends BaseMatcher<T>
+	~> class H1
+	~> class ConstructorTests
+	at dev.m3s.programming2.homework1.SetGraduationYearTests.setUp(SetGraduationYearTests.java:36)
+
+dev.m3s.programming2.homework1.SetGraduationYearTests.invalidYearTests  Time elapsed: 0.002 s  <<< ERROR!
+dev.m3s.maeaettae.jreq.RequirementException: 
+None of the classes in ⟨dev.m3s.programming2.homework1⟩ meet the requirements for ⟨Student⟩
+	a. The class should have name ⟨Student⟩	(0 matches)
+
+	Closest matches:
+	~> class SetterTests
+	~> class ConstructorTests
+	~> class RegexMatcher extends BaseMatcher<String>
+	~> class AttributeTests
+	~> class OptionalTests
+	~> class ToStringTests
+	~> class V2MethodTests extends H1
+	~> class extends Iterator<String>
+	~> class NullTests
+	~> class MockStudent
+	~> class GetterTests
+	~> class HasGraduatedTests
+	~> class CanGraduateTests
+	~> private static class Expected <T>
+	~> class SetGraduationYearTests
+	~> class H1Matcher <T> extends BaseMatcher<T>
+	~> class ConstantValuesTests
+	~> class H1
+	at dev.m3s.programming2.homework1.SetGraduationYearTests.setUp(SetGraduationYearTests.java:36)
+
+dev.m3s.programming2.homework1.SetGraduationYearTests.conditionsUnmetTest  Time elapsed: 0.002 s  <<< ERROR!
+dev.m3s.maeaettae.jreq.RequirementException: 
+None of the classes in ⟨dev.m3s.programming2.homework1⟩ meet the requirements for ⟨Student⟩
+	a. The class should have name ⟨Student⟩	(0 matches)
+
+	Closest matches:
+	~> class ConstantValuesTests
+	~> class H1
+	~> class GetterTests
+	~> class AttributeTests
+	~> class RegexMatcher extends BaseMatcher<String>
+	~> class H1Matcher <T> extends BaseMatcher<T>
+	~> class SetterTests
+	~> class ToStringTests
+	~> class extends Iterator<String>
+	~> class MockStudent
+	~> private static class Expected <T>
+	~> class NullTests
+	~> class HasGraduatedTests
+	~> class V2MethodTests extends H1
+	~> class CanGraduateTests
+	~> class SetGraduationYearTests
+	~> class ConstructorTests
+	~> class OptionalTests
+	at dev.m3s.programming2.homework1.SetGraduationYearTests.setUp(SetGraduationYearTests.java:36)
+
+dev.m3s.programming2.homework1.SetGraduationYearTests.conditionsMetTest  Time elapsed: 0.002 s  <<< ERROR!
+dev.m3s.maeaettae.jreq.RequirementException: 
+None of the classes in ⟨dev.m3s.programming2.homework1⟩ meet the requirements for ⟨Student⟩
+	a. The class should have name ⟨Student⟩	(0 matches)
+
+	Closest matches:
+	~> class H1
+	~> class SetGraduationYearTests
+	~> class NullTests
+	~> class ToStringTests
+	~> class V2MethodTests extends H1
+	~> class OptionalTests
+	~> class CanGraduateTests
+	~> class H1Matcher <T> extends BaseMatcher<T>
+	~> class SetterTests
+	~> class ConstructorTests
+	~> private static class Expected <T>
+	~> class ConstantValuesTests
+	~> class extends Iterator<String>
+	~> class MockStudent
+	~> class AttributeTests
+	~> class HasGraduatedTests
+	~> class GetterTests
+	~> class RegexMatcher extends BaseMatcher<String>
+	at dev.m3s.programming2.homework1.SetGraduationYearTests.setUp(SetGraduationYearTests.java:36)
+

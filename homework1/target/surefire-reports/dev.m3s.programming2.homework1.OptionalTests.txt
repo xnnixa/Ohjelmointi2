@@ -1,0 +1,30 @@
+-------------------------------------------------------------------------------
+Test set: dev.m3s.programming2.homework1.OptionalTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.004 s <<< FAILURE! - in dev.m3s.programming2.homework1.OptionalTests
+dev.m3s.programming2.homework1.OptionalTests.dynamicYearTest  Time elapsed: 0.002 s  <<< ERROR!
+dev.m3s.maeaettae.jreq.RequirementException: 
+None of the classes in ⟨dev.m3s.programming2.homework1⟩ meet the requirements for ⟨Student⟩
+	a. The class should have name ⟨Student⟩	(0 matches)
+
+	Closest matches:
+	~> class ToStringTests
+	~> private static class Expected <T>
+	~> class ConstructorTests
+	~> class V2MethodTests extends H1
+	~> class SetGraduationYearTests
+	~> class extends Iterator<String>
+	~> class GetterTests
+	~> class H1Matcher <T> extends BaseMatcher<T>
+	~> class RegexMatcher extends BaseMatcher<String>
+	~> class SetterTests
+	~> class AttributeTests
+	~> class NullTests
+	~> class ConstantValuesTests
+	~> class HasGraduatedTests
+	~> class OptionalTests
+	~> class MockStudent
+	~> class H1
+	~> class CanGraduateTests
+	at dev.m3s.programming2.homework1.OptionalTests.setUp(OptionalTests.java:20)
+
