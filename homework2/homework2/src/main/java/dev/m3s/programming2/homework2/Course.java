@@ -4,7 +4,8 @@ public class Course {
 
     // ATTRIBUTES
 
-    private String name;
+    public static char[] toString;
+	private String name;
     private String courseCode;
     private Character courseBase; // must be A, P or S
     private int courseType; // 0 = optional, 1 = mandatory
@@ -24,11 +25,18 @@ public class Course {
         setCourseType(type);
         setPeriod(period);
         setCredits(credits);
-        setNumericGrade(numericGrade); //tää ei kuulu tänne plus toi courseBseTest ei mee läpi
+        setNumericGrade(numericGrade);
     }
 
     public Course(Course course) {
-        // The constructor must set the attribute values.
+        if (course != null) {
+            this.name = course.name;
+            this.courseCode = course.courseCode;
+            this.courseType = course.courseType;
+            this.period = course.period;
+            this.credits = course.credits;
+            this.numericGrade = course.numericGrade;
+        }
     }
 
     // METHODS
@@ -66,12 +74,13 @@ public class Course {
             && (courseBase != null)
             && ((courseBase == 'A' || courseBase == 'P' || courseBase == 'S')
             || (courseBase == 'a' || courseBase == 'p' || courseBase == 's'))) {
-            this.courseCode = String.valueOf(courseCode) + Character.toUpperCase(courseBase);
+            this.courseBase = Character.toUpperCase(courseBase);
+            this.courseCode = String.valueOf(courseCode) + this.courseBase;
         }
     }
 
     public Character getCourseBase() {
-        return courseBase;
+        return this.courseBase;
     }
 
     public int getPeriod() {
@@ -103,8 +112,8 @@ public class Course {
 
     public String toString() {
         StringBuilder str = new StringBuilder();
-        str.append("[" + courseCode + " (" + credits + "), " + name + "." + courseType + "," + "period:" + period + "." + "]");
-        return null; //The method will output the expected output for an object of type Course. See examples below ***
+        str.append("[" + courseCode + " (" + String.format("%.2f", credits) + " cr), \"" + name + "\". " + getCourseTypeString() + ", period: " + period + "." + "]");
+        return str.toString();
     }
 
 }
