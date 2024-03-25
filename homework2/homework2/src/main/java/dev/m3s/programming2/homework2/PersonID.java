@@ -4,13 +4,31 @@ public class PersonID {
     
     private String birthDate = ConstantValues.NO_BIRTHDATE;
 
-    private String getBirthDate() {
-        return birthDate;
+    public String getBirthDate() {
+        return (birthDate != null && !birthDate.equals(ConstantValues.NO_BIRTHDATE)) ? birthDate : "Not available";
     }
 
     public String setPersonId(final String personID) {
-        checkPersonIDNumber(personID);
-        return null;
+        if (personID == null) {
+            return "Invalid birthday!";
+        }
+        if (!checkPersonIDNumber(personID)) {
+            return "Invalid birthday!";
+        }
+    
+        String birthDate = formatBirthDate(personID);
+    
+        if (!checkBirthDate(birthDate)) {
+            return "Invalid birthday!";
+        }
+    
+        if (!checkValidCharacter(personID)) {
+            return "Incorrect check mark!";
+        }
+    
+        this.birthDate = birthDate;
+    
+        return "Ok";
     }
 
     private boolean checkPersonIDNumber(final String personID) {
@@ -90,5 +108,21 @@ public class PersonID {
         return day <= maxDaysInMonth;
     }
 
+    private String formatBirthDate(final String personID) {
+        String day = personID.substring(0, 2);
+        String month = personID.substring(2, 4);
+        String year = personID.substring(4, 6);
+        String centuryChar = personID.substring(6, 7);
+    
+        if (centuryChar.equals("+")) {
+            year = "18" + year;
+        } else if (centuryChar.equals("-")) {
+            year = "19" + year;
+        } else if (centuryChar.equals("A")) {
+            year = "20" + year;
+        }
+    
+        return day + "." + month + "." + year;
+    }
 
 }
