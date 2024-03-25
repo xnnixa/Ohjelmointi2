@@ -1,14 +1,12 @@
 package dev.m3s.programming2.homework2;
 
-import org.checkerframework.checker.units.qual.C;
-
 public class Course {
 
     // ATTRIBUTES
 
     private String name;
     private String courseCode;
-    private Character courseBase = 'A'; // must be A, P or S
+    private Character courseBase; // must be A, P or S
     private int courseType; // 0 = optional, 1 = mandatory
     private int period; // 1-5
     private double credits;
@@ -26,7 +24,7 @@ public class Course {
         setCourseType(type);
         setPeriod(period);
         setCredits(credits);
-        setNumericGrade(numericGrade);
+        setNumericGrade(numericGrade); //tää ei kuulu tänne plus toi courseBseTest ei mee läpi
     }
 
     public Course(Course course) {
@@ -40,7 +38,9 @@ public class Course {
     }
 
     public void setName(String name) {
-        this.name = name;
+        if (name != null && name != "") {
+            this.name = name;
+        }
     }
 
     public String getCourseTypeString() {
@@ -62,8 +62,11 @@ public class Course {
     }
 
     public void setCourseCode(final int courseCode, Character courseBase) {
-        if ((courseCode > 0 && courseCode < 1000000) && (courseBase == 'A' || courseBase == 'P' || courseBase == 'S')) {
-            this.courseCode = String.valueOf(courseCode) + courseBase;
+        if ((courseCode > 0 && courseCode < 1000000)
+            && (courseBase != null)
+            && ((courseBase == 'A' || courseBase == 'P' || courseBase == 'S')
+            || (courseBase == 'a' || courseBase == 'p' || courseBase == 's'))) {
+            this.courseCode = String.valueOf(courseCode) + Character.toUpperCase(courseBase);
         }
     }
 
