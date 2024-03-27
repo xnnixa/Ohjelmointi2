@@ -12,7 +12,7 @@ import static dev.m3s.programming2.homework2.H2.*;
 class StudentToStringTests {
 	@Test
 	@DisplayName("Test toString")
-	@EnabledIfEnvironmentVariable(named = ENV_VAR, matches = V1)
+	 
 	void toStringTestsV1() {
 
 		MockStudent.nameless()
@@ -90,7 +90,7 @@ class StudentToStringTests {
 
 	@Test
 	@DisplayName("Test toString (Version 2)")
-	@EnabledIfEnvironmentVariable(named = ENV_VAR, matches = V2)
+
 	void toStringTestsV2() {
 
 		MockStudent.nameless()

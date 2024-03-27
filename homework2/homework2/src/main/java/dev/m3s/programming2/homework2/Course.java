@@ -1,5 +1,7 @@
 package dev.m3s.programming2.homework2;
 
+import java.util.Locale;
+
 public class Course {
 
     // ATTRIBUTES
@@ -7,11 +9,11 @@ public class Course {
     public static char[] toString;
 	private String name;
     private String courseCode;
-    private Character courseBase; // must be A, P or S
-    private int courseType; // 0 = optional, 1 = mandatory
-    private int period; // 1-5
+    private Character courseBase;
+    private int courseType;
+    private int period;
     private double credits;
-    private boolean numericGrade; // 1 = has numeric grading, 0 = doesn't
+    private boolean numericGrade;
 
     // CONSTRUCTORS
 
@@ -112,7 +114,7 @@ public class Course {
 
     public String toString() {
         StringBuilder str = new StringBuilder();
-        str.append("[" + courseCode + " (" + String.format("%.2f", credits) + " cr), \"" + name + "\". " + getCourseTypeString() + ", period: " + period + "." + "]");
+        str.append("[" + courseCode + " (" + String.format(Locale.US, "%.2f", credits) + " cr), \"" + name + "\". " + getCourseTypeString() + ", period: " + period + "." + "]");
         return str.toString();
     }
 

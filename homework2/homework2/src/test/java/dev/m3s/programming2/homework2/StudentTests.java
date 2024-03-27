@@ -254,7 +254,6 @@ public class StudentTests {
 
 	@Test
 	@DisplayName("setDegreeTitle")
-	@EnabledIfEnvironmentVariable(named = ENV_VAR, matches = V1)
 	void setDegreeTitleTest() {
 		Object degrObject = degree.read(student);
 		String newTitle = randomString(24);
@@ -269,7 +268,7 @@ public class StudentTests {
 
 	@Test
 	@DisplayName("addCourse")
-	@EnabledIfEnvironmentVariable(named = ENV_VAR, matches = V1)
+	 
 	void addCourseTest() {
 		Object degrObject = degree.read(student);
 
@@ -311,7 +310,7 @@ public class StudentTests {
 
 	@Test
 	@DisplayName("addCourses")
-	@EnabledIfEnvironmentVariable(named = ENV_VAR, matches = V1)
+	 
 	void addCoursesTest() {
 		Object degrObject = degree.read(student);
 		assertEquals(count.read(degrObject), 0,
@@ -385,7 +384,7 @@ public class StudentTests {
 
 	@Test
 	@DisplayName("setTitleOfThesis")
-	@EnabledIfEnvironmentVariable(named = ENV_VAR, matches = V1)
+	 
 	void setTitleOfThesisTest() {
 		Object degrObject = degree.read(student);
 		String newTitle = randomString(24);
@@ -398,7 +397,7 @@ public class StudentTests {
 
 	@Test
 	@DisplayName("printCourses")
-	@EnabledIfEnvironmentVariable(named = ENV_VAR, matches = V1)
+	 
 	void printCoursesTest() {
 		int testCases = 3;
 		int maxCoursesPerCase = 5;
@@ -431,7 +430,7 @@ public class StudentTests {
 
 	@Test
 	@DisplayName("printDegree")
-	@EnabledIfEnvironmentVariable(named = ENV_VAR, matches = V1)
+	 
 	void printDegreeTest() {
 		int testCases = 3;
 		int maxCoursesPerCase = 5;
@@ -529,7 +528,7 @@ public class StudentTests {
 
 	@Test
 	@DisplayName("getStudyYears")
-	@EnabledIfEnvironmentVariable(named = ENV_VAR, matches = V1)
+	 
 	void getStudyYearsTests() {
 		// The student has not graduated
 		// Default value = current year - start year (current year) = 0

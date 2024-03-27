@@ -14,7 +14,7 @@ import org.junit.jupiter.api.condition.EnabledIfEnvironmentVariable;
 import static dev.m3s.programming2.homework2.H2.*;
 import static dev.m3s.programming2.homework2.H2Matcher.*;
 
-@EnabledIfEnvironmentVariable(named = ENV_VAR, matches = V2)
+  
 @TestCategories({ @TestCategory("Student") })
 class V2StudentTests {
 	static IntFields degreeCount = classStudent.intField()
