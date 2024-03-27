@@ -369,6 +369,7 @@ public class DegreeTests {
 				studentCourseRegexes[j] = regex.toString();
 			}
 			String output = captureOutput(printCourses, degree);
+			System.out.println(output);
 			for (String re : studentCourseRegexes) {
 				findIgnoringWhitespace(re, output,
 						"in the output of printCourses", re.substring(0, 9)
