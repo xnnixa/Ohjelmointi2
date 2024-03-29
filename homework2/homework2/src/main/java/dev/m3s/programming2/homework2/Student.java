@@ -194,9 +194,9 @@ public class Student {
 
         if (hasGraduated()) {
             return graduationYear - startYear;
-        } else {
+        } 
+        
             return Year.now().getValue() - startYear;
-        }
 
     }
 
