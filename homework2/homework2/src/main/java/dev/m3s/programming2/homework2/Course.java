@@ -6,7 +6,6 @@ public class Course {
 
     // ATTRIBUTES
 
-    public static char[] toString;
 	private String name;
     private String courseCode;
     private Character courseBase;
@@ -20,14 +19,13 @@ public class Course {
     public Course() {
     }
 
-    public Course(String name, final int code, Character courseBase, final int type, final int period,
-            final double credits, boolean numericGrade) {
+    public Course(String name, final int code, Character courseBase, final int type, final int period, final double credits, boolean numericGrade) {
         setName(name);
         setCourseCode(code, courseBase);
         setCourseType(type);
         setPeriod(period);
         setCredits(credits);
-        setNumericGrade(numericGrade);
+        this.numericGrade = numericGrade;
     }
 
     public Course(Course course) {
@@ -35,6 +33,7 @@ public class Course {
             this.name = course.name;
             this.courseCode = course.courseCode;
             this.courseType = course.courseType;
+            this.courseBase = course.courseBase;
             this.period = course.period;
             this.credits = course.credits;
             this.numericGrade = course.numericGrade;
@@ -112,6 +111,7 @@ public class Course {
         this.numericGrade = numericGrade;
     }
 
+    @Override
     public String toString() {
         StringBuilder str = new StringBuilder();
         str.append("[" + courseCode + " (" + String.format(Locale.US, "%.2f", credits) + " cr), \"" + name + "\". " + getCourseTypeString() + ", period: " + period + "." + "]");

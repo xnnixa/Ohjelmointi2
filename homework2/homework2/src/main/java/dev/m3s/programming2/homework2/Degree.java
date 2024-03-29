@@ -1,6 +1,8 @@
 package dev.m3s.programming2.homework2;
 
 public class Degree {
+
+    //ATTRIBUTES
     
     private static final int MAX_COURSES = 50;
     private int count = 0;
@@ -8,9 +10,14 @@ public class Degree {
     private String titleOfThesis = ConstantValues.NO_TITLE;
     private StudentCourse[] myCourses = new StudentCourse[MAX_COURSES];
 
+    //CONSTRUCTORS
+
     public StudentCourse[] getCourses() {
         return myCourses;
+        
     }
+
+    //METHODS
 
     public void addStudentCourses(StudentCourse[] courses) {
         if (courses != null) {
@@ -27,6 +34,10 @@ public class Degree {
             return true;
         }
         return false;
+    }
+
+    public int getCount() {
+        return count;
     }
 
     public String getDegreeTitle() {
@@ -94,16 +105,22 @@ public class Degree {
     public String toString() {
         StringBuilder str = new StringBuilder();
         str.append("Degree [Title: ").append(degreeTitle)
-        .append(" (courses: ").append(myCourses != null ? myCourses.length : 0).append(")\n")
+           .append(" (courses: ").append(myCourses != null ? myCourses.length : 0).append(")").append("\n")
            .append("Thesis title: ").append(titleOfThesis).append("\n");
     
         int count = 1;
-        for (StudentCourse course : myCourses) {
-            if (course != null) {
-                str.append(count++).append(". ").append(course.toString()).append("\n");
+        for (StudentCourse studentCourse : myCourses) {
+            if (studentCourse != null) {
+                Course course = studentCourse.getCourse();
+                str.append(count++).append(". ")
+                   .append(course.toString()).append(" (")
+                   .append(course.getCourseTypeString()).append("), ")
+                   .append("Year: ").append(studentCourse.getYear()).append(", ")
+                   .append("Grade: ").append(studentCourse.getGradeNum()).append("\n");
             }
         }
         str.append("]");
+    
         return str.toString();
     }
 

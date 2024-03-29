@@ -6,20 +6,22 @@ import java.util.Locale;
 public class StudentCourse {
 
     // ATTRIBUTES
-    
+
     private Course course;
     private int gradeNum;
     private int yearCompleted = 0;
 
-    //CONSTUCTORS
+    // CONSTUCTORS
 
     public StudentCourse() {
     }
 
     public StudentCourse(Course course, final int gradeNum, final int yearCompleted) {
+        if (yearCompleted >= 2000) {
+            this.yearCompleted = yearCompleted;
+        }
         setCourse(course);
         setGrade(gradeNum);
-        this.yearCompleted = yearCompleted;
     }
 
     // METHODS
@@ -42,14 +44,14 @@ public class StudentCourse {
         if (checkGradeValidity(gradeNum)) {
             this.gradeNum = gradeNum;
             if (yearCompleted == 0) {
-            this.yearCompleted = Year.now().getValue();
+                this.yearCompleted = Year.now().getValue();
+            }
         }
-    }
     }
 
     private boolean checkGradeValidity(final int gradeNum) {
         return (gradeNum >= ConstantValues.MIN_GRADE && gradeNum <= ConstantValues.MAX_GRADE)
-            || gradeNum == ConstantValues.GRADE_ACCEPTED || gradeNum == ConstantValues.GRADE_FAILED;
+                || gradeNum == ConstantValues.GRADE_ACCEPTED || gradeNum == ConstantValues.GRADE_FAILED;
     }
 
     public boolean isPassed() {
@@ -73,9 +75,32 @@ public class StudentCourse {
 
     public String toString() {
         StringBuilder str = new StringBuilder();
-        str.append("[" + course.getCourseCode() + "(" + String.format(Locale.US, "%.2f", course.getCredits()) + " cr), " + course.getName() + ". " + course.getCourseType() + ", period: " + course.getPeriod() + ".] Year: " + yearCompleted + ", Grade: " + gradeNum + ".]");
+        str.append("[")
+                .append(course.getCourseCode())
+                .append(" (")
+                .append(String.format(Locale.US, "%.2f", course.getCredits()))
+                .append(" cr), \"")
+                .append(course.getName())
+                .append("\". ")
+                .append(course.getCourseTypeString())
+                .append(", period: ")
+                .append(course.getPeriod())
+                .append(".] Year: ")
+                .append(yearCompleted)
+                .append(", Grade: ");
+
+        if (course.isNumericGrade()) {
+            if (gradeNum == 0) {
+                str.append("Not graded");
+            } else {
+                str.append(gradeNum);
+            }
+        } else {
+            char grade = isPassed() ? ConstantValues.GRADE_ACCEPTED : ConstantValues.GRADE_FAILED;
+            str.append(grade);
+        }
+
+        str.append(".]");
         return str.toString();
     }
-
-
 }

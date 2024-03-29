@@ -86,7 +86,7 @@ public class GraduationTests {
 
 	@Test
 	@DisplayName(("canGraduate: all conditions met"))
-	@EnabledIfEnvironmentVariable(named = ENV_VAR, matches = V1)
+	 
 	void canGraduateConditionsMetTest() {
 		setAllConditions(student, currentStartYear);
 		assertEquals(canGraduate.call(student), true,
@@ -96,7 +96,7 @@ public class GraduationTests {
 
 	@Test
 	@DisplayName(("canGraduate: all conditions met v2"))
-	@EnabledIfEnvironmentVariable(named = ENV_VAR, matches = V2)
+	  
 	void canGraduateConditionsMetTest_V2() {
 		setAllConditionsV2(student, currentStartYear);
 		assertEquals(canGraduate.call(student), true,
@@ -106,7 +106,7 @@ public class GraduationTests {
 
 	@Test
 	@DisplayName("canGraduate: no credits")
-	@EnabledIfEnvironmentVariable(named = ENV_VAR, matches = V1)
+	 
 	void canGraduateWithoutCreditsTest() {
 		setStartYear.call(student, currentStartYear);
 		setBachelorsThesis(student);
@@ -118,7 +118,7 @@ public class GraduationTests {
 
 	@Test
 	@DisplayName("canGraduate: no bachelor's credits")
-	@EnabledIfEnvironmentVariable(named = ENV_VAR, matches = V2)
+	  
 	void canGraduateWithoutBachelorsCreditsTest() {
 		setStartYear.call(student, currentStartYear);
 		setCredits(student, 1, 120);
@@ -131,7 +131,7 @@ public class GraduationTests {
 
 	@Test
 	@DisplayName("canGraduate: no master's credits")
-	@EnabledIfEnvironmentVariable(named = ENV_VAR, matches = V2)
+	  
 	void canGraduateWithoutMastersCreditsTest() {
 		setStartYear.call(student, currentStartYear);
 		setCredits(student, 0, 180);
@@ -144,7 +144,7 @@ public class GraduationTests {
 
 	@Test
 	@DisplayName("canGraduate: no thesis title")
-	@EnabledIfEnvironmentVariable(named = ENV_VAR, matches = V1)
+	 
 	void canGraduateWithoutThesisTitleTest() {
 		setStartYear.call(student, currentStartYear);
 		setCredits(student, 180);
@@ -156,7 +156,7 @@ public class GraduationTests {
 
 	@Test
 	@DisplayName("canGraduate: no bachelor's thesis title")
-	@EnabledIfEnvironmentVariable(named = ENV_VAR, matches = V2)
+	  
 	void canGraduateWithoutBachelorsThesisTitleTest() {
 		setStartYear.call(student, currentStartYear);
 		setCredits(student, 0, 180);
@@ -169,7 +169,7 @@ public class GraduationTests {
 
 	@Test
 	@DisplayName("canGraduate: no master's thesis title")
-	@EnabledIfEnvironmentVariable(named = ENV_VAR, matches = V2)
+	  
 	void canGraduateWithoutMastersThesisTitleTest() {
 		setStartYear.call(student, currentStartYear);
 		setCredits(student, 0, 180);
@@ -183,7 +183,7 @@ public class GraduationTests {
 
 	@Test
 	@DisplayName("canGraduate: almost enough credits")
-	@EnabledIfEnvironmentVariable(named = ENV_VAR, matches = V1)
+	 
 	void canGraduateConditionsAlmostMetTest() {
 		setStartYear.call(student, currentStartYear);
 		setCredits(student, 179);
@@ -196,7 +196,7 @@ public class GraduationTests {
 
 	@Test
 	@DisplayName("canGraduate: almost enough credits v2")
-	@EnabledIfEnvironmentVariable(named = ENV_VAR, matches = V2)
+	  
 	void canGraduateConditionsAlmostMetTest_V2() {
 		setStartYear.call(student, currentStartYear);
 		setCredits(student, 0, 179);
@@ -223,7 +223,7 @@ public class GraduationTests {
 
 	@Test
 	@DisplayName("setGraduationYear: invalid year")
-	@EnabledIfEnvironmentVariable(named = ENV_VAR, matches = V1)
+	 
 	void setGraduationYearInvalidYearTests() {
 		setAllConditions(student, currentStartYear);
 
@@ -244,7 +244,7 @@ public class GraduationTests {
 
 	@Test
 	@DisplayName("setGraduationYear: invalid year v2")
-	@EnabledIfEnvironmentVariable(named = ENV_VAR, matches = V2)
+	  
 	void setGraduationYearInvalidYearTests_V2() {
 		setAllConditionsV2(student, currentStartYear);
 
@@ -277,7 +277,7 @@ public class GraduationTests {
 
 	@Test
 	@DisplayName("setGraduationYear: all conditions met")
-	@EnabledIfEnvironmentVariable(named = ENV_VAR, matches = V1)
+	 
 	void setGraduationYearConditionsMetTest() {
 		setAllConditions(student, currentStartYear);
 
@@ -296,7 +296,7 @@ public class GraduationTests {
 
 	@Test
 	@DisplayName("setGraduationYear: all conditions met v2")
-	@EnabledIfEnvironmentVariable(named = ENV_VAR, matches = V2)
+	  
 	void setGraduationYearConditionsMetTest_V2() {
 		setAllConditionsV2(student, currentStartYear);
 
@@ -321,7 +321,7 @@ public class GraduationTests {
 
 	@Test
 	@DisplayName("setGraduationYear: year bounds")
-	@EnabledIfEnvironmentVariable(named = ENV_VAR, matches = V1)
+	 
 	void setGraduationYearStartYearTest() {
 		setAllConditions(student, currentStartYear);
 
@@ -347,7 +347,7 @@ public class GraduationTests {
 
 	@Test
 	@DisplayName("setGraduationYear: year bounds v2")
-	@EnabledIfEnvironmentVariable(named = ENV_VAR, matches = V2)
+	  
 	void setGraduationYearStartYearTest_V2() {
 		setAllConditionsV2(student, currentStartYear);
 
@@ -374,7 +374,7 @@ public class GraduationTests {
 
 	@Test
 	@DisplayName("setGraduationYear: no credits")
-	@EnabledIfEnvironmentVariable(named = ENV_VAR, matches = V1)
+	 
 	void setGraduationYearWithoutCreditsTest() {
 		setStartYear.call(student, currentStartYear);
 		setBachelorsThesis(student);
@@ -389,7 +389,7 @@ public class GraduationTests {
 
 	@Test
 	@DisplayName("setGraduationYear: no bachelor's credits")
-	@EnabledIfEnvironmentVariable(named = ENV_VAR, matches = V2)
+	  
 	void setGraduationYearWithoutBachelorsCreditsTest() {
 		setStartYear.call(student, currentStartYear);
 		setThesis(student, 0);
@@ -405,7 +405,7 @@ public class GraduationTests {
 
 	@Test
 	@DisplayName("setGraduationYear: no master's credits")
-	@EnabledIfEnvironmentVariable(named = ENV_VAR, matches = V2)
+	  
 	void setGraduationYearWithoutMastersCreditsTest() {
 		setStartYear.call(student, currentStartYear);
 		setThesis(student, 0);
@@ -422,7 +422,7 @@ public class GraduationTests {
 
 	@Test
 	@DisplayName("setGraduationYear: no thesis title")
-	@EnabledIfEnvironmentVariable(named = ENV_VAR, matches = V1)
+	 
 	void setGraduationYearWithoutThesisTitleTest() {
 		setStartYear.call(student, currentStartYear);
 		setCredits(student, 180);
@@ -437,7 +437,7 @@ public class GraduationTests {
 
 	@Test
 	@DisplayName("setGraduationYear: no bachelor's thesis title")
-	@EnabledIfEnvironmentVariable(named = ENV_VAR, matches = V2)
+	  
 	void setGraduationYearWithoutBachelorsThesisTitleTest() {
 		setStartYear.call(student, currentStartYear);
 		setThesis(student, 1);
@@ -454,7 +454,7 @@ public class GraduationTests {
 
 	@Test
 	@DisplayName("setGraduationYear: no masters's thesis title")
-	@EnabledIfEnvironmentVariable(named = ENV_VAR, matches = V2)
+	  
 	void setGraduationYearWithoutMastersThesisTitleTest() {
 		setStartYear.call(student, currentStartYear);
 		setThesis(student, 0);
@@ -471,7 +471,7 @@ public class GraduationTests {
 
 	@Test
 	@DisplayName("hasGraduated")
-	@EnabledIfEnvironmentVariable(named = ENV_VAR, matches = V1)
+	 
 	void hasGraduatedTests() {
 		// Test the default return value
 
@@ -494,7 +494,7 @@ public class GraduationTests {
 
 	@Test
 	@DisplayName("hasGraduated v2")
-	@EnabledIfEnvironmentVariable(named = ENV_VAR, matches = V2)
+	  
 	void hasGraduatedTests_V2() {
 		// Test the default return value
 
