@@ -96,7 +96,7 @@ public class Degree {
 
     public void printCourses() {
         for (StudentCourse course : myCourses) {
-            if (isCourseCompleted(course)) {
+            if (course != null) {
                 System.out.println(course);
             }
         }
@@ -104,23 +104,24 @@ public class Degree {
 
     public String toString() {
         StringBuilder str = new StringBuilder();
-        str.append("Degree [Title: ").append(degreeTitle)
-           .append(" (courses: ").append(myCourses != null ? myCourses.length : 0).append(")").append("\n")
-           .append("Thesis title: ").append(titleOfThesis).append("\n");
+        str.append("Degree [Title: \"").append(degreeTitle).append("\"")
+           .append(" (courses: ").append(myCourses != null ? count : 0).append(")").append("\n")
+           .append("Thesis title: \"").append(titleOfThesis).append("\"\n");
     
         int count = 1;
         for (StudentCourse studentCourse : myCourses) {
             if (studentCourse != null) {
                 Course course = studentCourse.getCourse();
                 str.append(count++).append(". ")
-                   .append(course.toString()).append(" (")
-                   .append(course.getCourseTypeString()).append("), ")
-                   .append("Year: ").append(studentCourse.getYear()).append(", ")
-                   .append("Grade: ").append(studentCourse.getGradeNum()).append("\n");
+                   .append(course.toString())
+
+                .append(" Year: ").append(studentCourse.getYear()).append(", ")
+                   .append("Grade: ").append(studentCourse.getGradeNum()).append("]\n");
             }
         }
         str.append("]");
-    
+        System.out.println("sysout: \n" + str);
+        
         return str.toString();
     }
 

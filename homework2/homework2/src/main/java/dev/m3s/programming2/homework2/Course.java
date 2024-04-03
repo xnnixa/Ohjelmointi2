@@ -99,8 +99,9 @@ public class Course {
     }
 
     private void setCredits(final double credits) {
-        if (credits >= ConstantValues.MIN_CREDITS && credits <= ConstantValues.MAX_COURSE_CREDITS)
-        this.credits = credits;
+        if (credits >= ConstantValues.MIN_CREDITS && credits <= ConstantValues.MAX_COURSE_CREDITS) {
+            this.credits = credits;
+        }
     }
 
     public boolean isNumericGrade() {

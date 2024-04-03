@@ -9,8 +9,8 @@ public class Student {
     private String firstName = ConstantValues.NO_NAME;
     private String lastName = ConstantValues.NO_NAME;
     private int id;
-    private int startYear = Year.now().getValue();
-    private int graduationYear = -1;
+    private int startYear;
+    private int graduationYear;
     private int degreeCount;
     private Degree[] degrees;
     private String birthDate = ConstantValues.NO_BIRTHDATE;
@@ -85,7 +85,7 @@ public class Student {
 
     public String setGraduationYear(final int graduationYear) {
         
-        if (graduationYear <= startYear && graduationYear >= Year.now().getValue()) {
+        if (graduationYear < startYear || graduationYear > Year.now().getValue() || graduationYear <= 2000) {
             return "Check graduation year";
         }
 
@@ -160,34 +160,25 @@ public class Student {
     }
 
     public boolean hasGraduated() {
-        return graduationYear != 0 && canGraduate();
+        return (graduationYear <= Year.now().getValue()) && canGraduate();
     }
 
     private boolean canGraduate() {
-        double bachelorCredits = 0;
-        double masterCredits = 0;
+
         boolean hasBachelorThesis = false;
         boolean hasMasterThesis = false;
+        Degree bachelor = degrees[0];
+        Degree master = degrees[1];
 
-        // Checking credits and theses
-        for (Degree degree : degrees) {
-            if (degree != null) {
-                bachelorCredits += degree.getCreditsByBase('A') + degree.getCreditsByBase('P');
-                masterCredits += degree.getCreditsByBase('S');
-                if (degree.getTitleOfThesis() != null && !degree.getTitleOfThesis().isEmpty()) {
-                    if (masterCredits >= ConstantValues.MASTER_CREDITS) {
-                        hasMasterThesis = true;
-                    }
-                    if (bachelorCredits >= ConstantValues.BACHELOR_CREDITS) {
-                        hasBachelorThesis = true;
-                    }
-                }
-
-            }
+        if (bachelor.getTitleOfThesis() != ConstantValues.NO_TITLE && bachelor.getCredits() >= ConstantValues.BACHELOR_CREDITS && bachelor.getTitleOfThesis() != null && !bachelor.getTitleOfThesis().isEmpty()) {
+            hasBachelorThesis = true;
         }
 
-        return (hasBachelorThesis && hasMasterThesis)
-                && (graduationYear >= startYear && graduationYear <= Year.now().getValue());
+        if (master.getTitleOfThesis() != ConstantValues.NO_TITLE && master.getCredits() >= ConstantValues.MASTER_CREDITS && master.getTitleOfThesis() != null && !master.getTitleOfThesis().isEmpty() ) {
+            hasMasterThesis = true;
+        }
+
+        return hasBachelorThesis && hasMasterThesis && (graduationYear < Year.now().getValue()) ;
     }
 
     public int getStudyYears() {
@@ -195,7 +186,7 @@ public class Student {
         if (hasGraduated()) {
             return graduationYear - startYear;
         } 
-        
+
             return Year.now().getValue() - startYear;
 
     }
