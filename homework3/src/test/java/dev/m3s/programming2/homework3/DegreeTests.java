@@ -113,7 +113,6 @@ class DegreeTests {
 	// NOTE: the count attribute in degree class is removed.
 	// Tests using count attribute for retrieving the number of courses are changed.
 	// size of myCourses is used instead of count
-	@EnabledIfEnvironmentVariable(named = H3.ENV_VAR, matches = H3.V2)
 	@Test
 	@DisplayName("Test course count after calling addStudentCourse(s)")
 	@SuppressWarnings("unchecked")

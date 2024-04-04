@@ -61,7 +61,7 @@ public class Course {
     }
 
     public void setCourseType(final int type) {
-        if (type == 1 || type == 0) {
+        if (type == ConstantValues.MANDATORY || type == ConstantValues.OPTIONAL) {
             this.courseType = type;
         }
     }
