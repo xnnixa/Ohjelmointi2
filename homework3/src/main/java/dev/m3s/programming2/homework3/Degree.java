@@ -10,27 +10,41 @@ public class Degree {
     private static final int MAX_COURSES = 50;
     private String degreeTitle = ConstantValues.NO_TITLE;
     private String titleOfThesis = ConstantValues.NO_TITLE;
-    List<StudentCourse> myCourses = new ArrayList<>();
+    private List<StudentCourse> myCourses = new ArrayList<>();
 
     //METHODS
 
     public List<StudentCourse> getCourses() {
-        return myCourses;
+        return new ArrayList<>(myCourses);       //returns a new list to avoid direct access to the original list
     }
 
     public void addStudentCourses(List<StudentCourse> courses) {
-        if (courses != null && courses.size() < MAX_COURSES) {
-            addStudentCourse();
-            //keep count
+        if (courses != null) {
+            for (StudentCourse course : courses) {
+                if (myCourses.size() < MAX_COURSES)
+                addStudentCourse(course);
+            }
         }
     }
 
     public boolean addStudentCourse(StudentCourse course) {
         if (course != null) {
-            //lisää kurssi
+            myCourses.add(course);
             return true;
         }
         return false;
     }
+
+    public String getDegreeTitle() {
+        return degreeTitle;
+    }
+
+    public void setDegreeTitle(String degreeTitle) {
+        if (degreeTitle != null) {
+            this.degreeTitle = degreeTitle;
+        }
+    }
+
+
 
 }
