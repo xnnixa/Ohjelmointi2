@@ -15,7 +15,7 @@ import dev.m3s.maeaettae.jreq.Quantifier;
 import io.github.staffan325.automated_grading.TestCategories;
 import io.github.staffan325.automated_grading.TestCategory;
 
-@EnabledIfEnvironmentVariable(named = H3.ENV_VAR, matches = H3.V2)
+
 @TestCategories({ @TestCategory("HourBasedPayment") })
 class V2HourBasedPaymentTests {
 

@@ -5,24 +5,24 @@ import java.util.List;
 
 public class Degree {
 
-    //ATTRIBUTES
-    
+    // ATTRIBUTES
+
     private static final int MAX_COURSES = 50;
     private String degreeTitle = ConstantValues.NO_TITLE;
     private String titleOfThesis = ConstantValues.NO_TITLE;
     private List<StudentCourse> myCourses = new ArrayList<>();
 
-    //METHODS
+    // METHODS
 
     public List<StudentCourse> getCourses() {
-        return new ArrayList<>(myCourses);       //returns a new list to avoid direct access to the original list
+        return new ArrayList<>(myCourses); // returns a new list to avoid direct access to the original list
     }
 
     public void addStudentCourses(List<StudentCourse> courses) {
         if (courses != null) {
             for (StudentCourse course : courses) {
                 if (myCourses.size() < MAX_COURSES)
-                addStudentCourse(course);
+                    addStudentCourse(course);
             }
         }
     }
@@ -64,7 +64,7 @@ public class Degree {
         }
         return baseCredits;
     }
-    
+
     public double getCreditsByType(final int courseType) {
         double typeCredits = 0.00;
         for (StudentCourse course : myCourses) {
@@ -84,11 +84,11 @@ public class Degree {
         }
         return totalCredits;
     }
-    
+
     private boolean isCourseCompleted(StudentCourse c) {
         return c != null && c.isPassed();
     }
-    
+
     public void printCourses() {
         for (StudentCourse course : myCourses) {
             if (course != null) {
@@ -114,9 +114,10 @@ public class Degree {
                     }
                 }
             }
-        } 
+        }
 
-        average = count > 0 ? Math.round((sum / count) * 100.0) / 100.0 : 0.0; //no division by zero can happen + rounding to two decimals
+        average = count > 0 ? Math.round((sum / count) * 100.0) / 100.0 : 0.0; // no division by zero can happen +
+                                                                               // rounding to two decimals
 
         gpa.add(sum); // add items to arraylist
         gpa.add(count);
@@ -127,8 +128,9 @@ public class Degree {
 
     public String toString() {
         StringBuilder str = new StringBuilder();
-            .append()
-    }
+            str.append('i'); // call student.printDegrees and toString
 
+        return str.toString();
+    }
 
 }

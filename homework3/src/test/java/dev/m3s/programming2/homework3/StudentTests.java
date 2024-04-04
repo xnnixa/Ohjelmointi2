@@ -353,7 +353,6 @@ class StudentTests {
 		}
 	}
 
-	@EnabledIfEnvironmentVariable(named = H3.ENV_VAR, matches = H3.V2)
 	@Test
 	@DisplayName("Test addCourse")
 	@SuppressWarnings("unchecked")
@@ -468,7 +467,6 @@ class StudentTests {
 	}
 
 	// there is not count attribute in V2. This test has two versions
-	@EnabledIfEnvironmentVariable(named = H3.ENV_VAR, matches = H3.V2)
 	@Test
 	@DisplayName("Test addCourses")
 	@SuppressWarnings("unchecked")

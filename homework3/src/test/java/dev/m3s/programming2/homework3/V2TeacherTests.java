@@ -12,7 +12,7 @@ import io.github.staffan325.automated_grading.TestCategory;
 // This is an interface
 // Tests only test if the required attributes and methods exist
 // Functionality is not tested. It will be tested through the classes implementing the interface
-@EnabledIfEnvironmentVariable(named = H3.ENV_VAR, matches = H3.V2)
+
 @TestCategories({ @TestCategory("Teacher") })
 class V2TeacherTests {
 
