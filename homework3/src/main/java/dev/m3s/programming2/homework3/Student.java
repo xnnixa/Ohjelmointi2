@@ -55,8 +55,9 @@ public class Student extends Person  {
     }
 
     public void setDegreeTitle(final int i, String dName) {
-        if (dName != null && i <= 0 && i < degrees.size()) {
+        if (dName != null && i >= 0 && i < degrees.size()) {
             //set title for given degree (see class Degree))
+            degrees.atIndex(i).setDegreeTitle(dName);
         }
     }
 
