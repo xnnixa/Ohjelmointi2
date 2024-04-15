@@ -1,8 +1,10 @@
 package dev.m3s.programming2.homework3;
 
+import java.text.NumberFormat;
 import java.time.Year;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class Student extends Person {
 
@@ -18,6 +20,11 @@ public class Student extends Person {
     public Student(String lname, String fname) {
         super(lname, fname);
         this.id = getRandomId(ConstantValues.MIN_STUDENT_ID, ConstantValues.MAX_STUDENT_ID);
+        degrees.add(0, new Degree());
+        degrees.add(1, new Degree());
+        degrees.add(2, new Degree());
+
+        
     }
 
     // METHODS
@@ -102,8 +109,8 @@ public class Student extends Person {
     }
 
     public void printDegrees() {
-        if (!degrees.isEmpty() && degrees != null) {
-            System.out.println(degrees);
+        for (Degree degree : degrees) {
+            System.out.println(degree.toString());
         }
     }
 
@@ -114,7 +121,7 @@ public class Student extends Person {
     }
 
     public boolean hasGraduated() {
-        return (graduationYear <= Year.now().getValue());
+        return graduationYear == 0 ? false : true;
     }
 
     private boolean canGraduate() {
@@ -138,30 +145,85 @@ public class Student extends Person {
             hasMasterThesis = true;
         }
     
-        // graduation year is set and before the current year
-        boolean isGraduationYearValid = graduationYear > 0 && graduationYear <= Year.now().getValue();
-    
         // true only if all conditions are met
-        return hasBachelorThesis && hasMasterThesis && isGraduationYearValid;
+        return hasBachelorThesis && hasMasterThesis;
     }
 
     public int getStudyYears() {
-        if (hasGraduated()) {
-            return graduationYear - startYear;
-        } else {
-            return Year.now().getValue() - startYear;
+        if (!hasGraduated()) {
+            int currentYear = Year.now().getValue();
+            return currentYear - startYear;
         }
-    }
-
-    public String toString(){
-        StringBuilder str = new StringBuilder();
-        //TODO toString
-        return str.toString();
+        return graduationYear - startYear;
     }
 
     @Override
+    public String toString(){
+
+        double bachelorCredits = 0;
+        double masterCredits = 0;
+
+        // for (Degree degree : degrees) {
+        //     if (degree != null) { // && on läpäisty??
+        //         bachelorCredits += degree.getCreditsByBase('A') + degree.getCreditsByBase('P');
+        //         System.out.println(bachelorCredits);
+        //         masterCredits += degree.getCreditsByBase('S');
+        //     }
+        // }
+
+            for (int i = 0; i < degrees.size(); i++) {
+                if (i == 0) {
+                    bachelorCredits = degrees.get(i).getCredits();
+                }
+
+                if (i == 1) {
+                    masterCredits = degrees.get(i).getCredits();
+                }
+            }
+        
+        double totalCredits = bachelorCredits + masterCredits;
+        double totalGPA = (degrees.get(ConstantValues.BACHELOR_TYPE).getGPA(ConstantValues.ALL).get(2)+degrees.get(ConstantValues.MASTER_TYPE).getGPA(ConstantValues.ALL).get(2)) / 2;
+        StringBuilder str = new StringBuilder();
+        NumberFormat nf = NumberFormat.getNumberInstance(Locale.GERMANY);
+        nf.setMaximumFractionDigits(2);
+        nf.setMinimumFractionDigits(2);
+
+            str.append("Student id: " + id)
+                .append("\n\t")
+                .append("First name: " + getFirstName() + ", Last name: " + getLastName())
+                .append("\n\t")
+                .append("Date of birth: " + getBirthDate())
+                .append("\n\t")
+                .append("Status: "+ (hasGraduated() ? "The student has graduated in " + graduationYear : "The student has not graduated, yet"))
+                .append("\n\t")
+                .append("Start year: " + startYear + " (studies have lasted for " + getStudyYears() + " years)")
+                .append("\n\t")
+                .append("Total credits: " + totalCredits + " (GPA = " + nf.format(totalGPA) + ")")
+                .append("\n\t")
+                .append("Bachelor credits: " + bachelorCredits)
+                .append("\n\t\t")
+                .append("Total bachelor credits completed (" + bachelorCredits + "/" + ConstantValues.BACHELOR_CREDITS + ")")
+                .append("\n\t\t")
+                .append("All mandatory bachelor credits completed (" + degrees.get(ConstantValues.BACHELOR_TYPE).getCreditsByType(ConstantValues.MANDATORY) + "/" + ConstantValues.BACHELOR_MANDATORY + ")")
+                .append("\n\t\t")
+                .append("GPA of Bachelor studies: " + nf.format(degrees.get(ConstantValues.BACHELOR_TYPE).getGPA(ConstantValues.ALL).get(2)))
+                .append("\n\t\t")
+                .append("Title of BSc Thesis: \"" + degrees.get(ConstantValues.BACHELOR_TYPE).getTitleOfThesis() + "\"")
+                .append("\n\t")
+                .append("Master credits: " + masterCredits)
+                .append("\n\t\t")
+                .append("Missing master's credits " + (ConstantValues.MASTER_CREDITS - masterCredits) + " (" + masterCredits + "/" + ConstantValues.MASTER_CREDITS + ")")
+                .append("\n\t\t")
+                .append("All mandatory master credits completed (" + degrees.get(ConstantValues.MASTER_TYPE).getCreditsByType(ConstantValues.MANDATORY) + "/" + ConstantValues.MASTER_MANDATORY + ")")
+                .append("\n\t\t")
+                .append("GPA of Master studies: " + nf.format(degrees.get(ConstantValues.MASTER_TYPE).getGPA(ConstantValues.MASTER_TYPE).get(2)))
+                .append("\n\t\t")
+                .append("Title of MSc Thesis: \"" + degrees.get(ConstantValues.MASTER_TYPE).getTitleOfThesis() + "\"");
+        return str.toString();
+    }
+
     public String getIdString(){
-        return "Student id: " + id;
+        return "Student id: " + String.valueOf(id);
     }
 
 }

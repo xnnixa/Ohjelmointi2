@@ -28,7 +28,7 @@ public class Degree {
     }
 
     public boolean addStudentCourse(StudentCourse course) {
-        if (course != null) {
+        if (course != null && myCourses.size() < MAX_COURSES) {
             myCourses.add(course);
             return true;
         }
@@ -116,8 +116,7 @@ public class Degree {
             }
         }
 
-        average = count > 0 ? Math.round((sum / count) * 100.0) / 100.0 : 0.0; // no division by zero can happen +
-                                                                               // rounding to two decimals
+        average = count > 0 ? (sum / count) : 0.0;
 
         gpa.add(sum); // add items to arraylist
         gpa.add(count);
@@ -126,9 +125,14 @@ public class Degree {
         return gpa;
     }
 
+    
     public String toString() {
         StringBuilder str = new StringBuilder();
-            str.append('i'); // call student.printDegrees and toString
+            str.append("Degree [Title: \"" + degreeTitle + "\" (courses: " + myCourses.size() + ")")
+                .append("\n\t")
+                .append("Thesis title: \"" + titleOfThesis + "\"")
+                .append("\n\t")
+                .append(myCourses);
 
         return str.toString();
     }

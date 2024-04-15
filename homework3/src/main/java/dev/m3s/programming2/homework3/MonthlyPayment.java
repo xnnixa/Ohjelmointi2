@@ -12,7 +12,7 @@ public class MonthlyPayment implements Payment {
     }
 
     public void setSalary(double salary){
-        if (salary < 0.0) {
+        if (salary > 0.0) {
             this.salary = salary;
         }
     }

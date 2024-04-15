@@ -52,8 +52,12 @@ public abstract class Person {
         }
     }
 
+    public String getBirthDate() {
+        return birthDate;
+    }
+
     protected int getRandomId(final int min, final int max) {
-        int range = max - min + 1;
+        int range = max - min;
         int id = (int) (Math.ceil(Math.random() * range) + min);
         return id;
     }
