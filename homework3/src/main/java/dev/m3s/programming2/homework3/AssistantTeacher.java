@@ -27,7 +27,16 @@ public class AssistantTeacher extends Employee implements Teacher {
         if (courses.isEmpty()) {
             return "";
         }
-        return courses.toString();
+    
+        List<String> courseStrings = new ArrayList<>();
+    
+        for (DesignatedCourse course : courses) {
+            String courseString = course.toString();
+            courseStrings.add(courseString);
+        }
+    
+        String result = String.join(" ", courseStrings);
+        return result;
     }
 
     public void setCourses(List<DesignatedCourse> courses) {
@@ -38,7 +47,7 @@ public class AssistantTeacher extends Employee implements Teacher {
 
     public String toString(){
         StringBuilder str = new StringBuilder();
-        str.append("Teacher id: " + getEmployeeIdString() + getIdString())
+        str.append("Teacher id: " + getEmployeeIdString() + super.getIdString())
         .append("\n\t")
         .append("First name: " + getFirstName() + ", Last name: " + getLastName())
         .append("\n\t")
@@ -49,6 +58,7 @@ public class AssistantTeacher extends Employee implements Teacher {
         .append("Assistant for courses:")
         .append("\n\t")
         .append(courses);
+
 
         return str.toString();
     }
