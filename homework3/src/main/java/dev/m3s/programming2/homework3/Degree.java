@@ -1,7 +1,10 @@
 package dev.m3s.programming2.homework3;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class Degree {
 
@@ -117,6 +120,10 @@ public class Degree {
         }
 
         average = count > 0 ? (sum / count) : 0.0;
+
+        DecimalFormatSymbols symbols = new DecimalFormatSymbols(Locale.US);
+        DecimalFormat df = new DecimalFormat("#.00", symbols);
+        average = Double.parseDouble(df.format(average));
 
         gpa.add(sum); // add items to arraylist
         gpa.add(count);

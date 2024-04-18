@@ -1,24 +1,47 @@
 package dev.m3s.programming2.homework3;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ResponsibleTeacher extends Employee implements Teacher {
+
+    //ATTTRIBUTES
+
+    private List<DesignatedCourse> courses = new ArrayList<>();
+
+    //CONSTRUCTOR
         
     public ResponsibleTeacher(String lname, String fname) {
         super(lname, fname);
     }
 
-
-    
+    //METHODS
     
     @Override
-public String getCourses() {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'getCourses'");
-}
+    protected String getEmployeeIdString() {
+        return "OY_TEACHER_";
+    }
+    
+    @Override
+    public String getCourses() {
+        if (courses.isEmpty()) {
+            return "";
+        }
+        return courses.toString();
+    }
 
-@Override
-protected String getEmployeeIdString() {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'getEmployeeIdString'");
-}
+    public void setCourses(List<DesignatedCourse> courses) {
+        if (courses != null) {
+            this.courses = courses;
+        }
+    }
+
+    public String toString(){
+        StringBuilder str = new StringBuilder();
+        str.append("");
+
+        return str.toString();
+    }
+
 
 }
