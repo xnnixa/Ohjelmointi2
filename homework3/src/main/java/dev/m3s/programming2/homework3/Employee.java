@@ -21,7 +21,7 @@ public abstract class Employee extends Person implements Payment {
     //METHODS
 
     public String getIdString(){
-        return empId;
+        return getEmployeeIdString() + empId;
     }
 
     public int getStartYear(){

@@ -45,9 +45,10 @@ public class AssistantTeacher extends Employee implements Teacher {
         }
     }
 
+    @Override
     public String toString(){
         StringBuilder str = new StringBuilder();
-        str.append("Teacher id: " + getEmployeeIdString() + super.getIdString())
+        str.append("Teacher id: " + super.getIdString())
         .append("\n\t")
         .append("First name: " + getFirstName() + ", Last name: " + getLastName())
         .append("\n\t")
@@ -58,7 +59,6 @@ public class AssistantTeacher extends Employee implements Teacher {
         .append("Assistant for courses:")
         .append("\n\t")
         .append(courses);
-
 
         return str.toString();
     }

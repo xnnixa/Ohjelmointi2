@@ -1,7 +1,6 @@
 package dev.m3s.programming2.homework3;
 
 import java.text.DecimalFormat;
-import java.text.NumberFormat;
 import java.time.Year;
 
 public class DesignatedCourse {
