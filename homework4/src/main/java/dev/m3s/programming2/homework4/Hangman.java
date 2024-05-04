@@ -9,8 +9,8 @@ public class Hangman {
     // ATTRIBUTES
     private String wordTBG; //word to be guessed
     private int guessCount;
-    private List<Character> wordList = new ArrayList<>();
-    private List<Character> guessedList = new ArrayList<>();
+    private List<Character> wordList = new ArrayList<>();   //word to be guessed as an arraylist
+    private List<Character> guessedList = new ArrayList<>();    //guessed letters
 
     // CONSTRUCTOR
     public Hangman(WordList words, int guesses) {
@@ -64,7 +64,7 @@ public class Hangman {
 
     // The method returns the number of remaining guesses. Note, must not be negative.
     public int guessesLeft(){
-        return Math.max(0, guessCount);
+        return Math.max(0, guessCount); //ensure guesscount wont go below 0
     }
 
     // The method returns the selected word (unmasked, i.e., as read from the file).
