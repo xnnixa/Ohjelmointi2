@@ -3,6 +3,7 @@ package dev.m3s.programming2.homework3;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class ResponsibleTeacher extends Employee implements Teacher {
 
     //ATTTRIBUTES
@@ -36,9 +37,19 @@ public class ResponsibleTeacher extends Employee implements Teacher {
         }
     }
 
+    @Override
     public String toString(){
         StringBuilder str = new StringBuilder();
-        str.append("");
+        str.append("Teacher id: " + super.getIdString())
+        .append("\n\t")
+        .append("First name: " + getFirstName() + ", Last name: " + getLastName())
+        .append("\n\t")
+        .append("Birthdate: " + getBirthDate())
+        .append("\n\t")
+        .append("Salary: " + getPayment())
+        .append("\n\t")
+        .append("Teacher for courses:")
+        .append(courses);
 
         return str.toString();
     }
