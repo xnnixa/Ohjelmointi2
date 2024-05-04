@@ -25,9 +25,25 @@ public class WordList {
         }
     }
 
+    // for initializing with a predefined list of words (for extra method)
+    public WordList(List<String> words) {
+        wordlist = new ArrayList<>(words);
+    }
+
     //METHODS
     public List<String> giveWords(){
         return wordlist;
+    }
+
+    // Method to filter and return a new WordList with words of a specific length
+    public WordList theWordsOfLength(int length) {
+        List<String> filteredWords = new ArrayList<>();
+        for (String word : wordlist) {
+            if (word.length() == length) {
+                filteredWords.add(word);
+            }
+        }
+        return new WordList(filteredWords);
     }
 
     
